@@ -10,7 +10,7 @@
 .cards > ul > li {
   border: 1px solid var(--highlight-background-color);
   background-color: var(--background-color);
-  width: 241.6px;
+  width: 300px;
   height: 468px;
 }
 
