@@ -13,6 +13,9 @@
   width: 280px;
   height: 468px;
 }
+.cards > ul > li > p {
+  font-size: 12px;
+}
 
 .cards .cards-card-body {
   margin: 16px;
@@ -30,7 +33,4 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-}
-pre {
-  white-space: normal;
 }
