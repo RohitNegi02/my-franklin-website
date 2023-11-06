@@ -18,7 +18,9 @@
 .columns > div > .columns-img-col img {
   display: block;
 }
-
+.columns {
+  margin-top: 50px;
+}
 @media (min-width: 900px) {
   .columns > div {
     align-items: center;
