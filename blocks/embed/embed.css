@@ -15,6 +15,7 @@
 .embed-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  height: 500px;
 }
 .embed-container iframe {
   height: 250px;
