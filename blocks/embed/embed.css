@@ -17,7 +17,7 @@
   grid-template-columns: 1fr 1fr;
   height: 500px;
 }
-.embed-container iframe {
-  height: 250px;
-  width: 170px;
+
+.embed-wrapper iframe {
+  width: 430px;
 }
