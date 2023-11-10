@@ -15,3 +15,7 @@
 .embed-container {
   display: flex;
 }
+.embed-container iframe {
+  height: 250px;
+  width: 170px;
+}
