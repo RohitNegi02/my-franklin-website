@@ -55,6 +55,7 @@ main .form label.required::after {
 
 main .form .field-wrapper {
   margin-bottom: var(--spacing-m);
+  padding: 50px;
 }
 
 main .form .form-checkbox-wrapper {
@@ -127,4 +128,6 @@ main .form button {
   main .form label {
     width: 72%;
   }
+}
+.field-wrapper {
 }
