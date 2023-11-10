@@ -14,7 +14,8 @@ footer .footer p {
   margin: 0;
 }
 footer .footer > div {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 5fr;
   gap: 20px;
 }
 footer .footer ul {
