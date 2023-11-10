@@ -26,7 +26,7 @@ main .form select {
   max-width: 50rem;
   box-sizing: border-box;
   border-radius: var(--input-border-radius);
-  font-size: var(--type-body-s-size);
+  font-size: 16px;
   line-height: var(--type-body-s-lh);
   font-family: var(--body-font-family);
 }
@@ -44,7 +44,7 @@ main .form label {
   display: block;
   padding-bottom: var(--spacing-xxs);
   box-sizing: border-box;
-  font-size: var(--type-body-s-size);
+  font-size: 16px;
   line-height: var(--type-body-s-lh);
 }
 
