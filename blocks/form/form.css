@@ -4,6 +4,7 @@ main .form {
   border-radius: var(--card-border-radius-l);
   filter: var(--image-filter-drop-shadow-small);
   border: solid 1px black;
+  margin-bottom: 30px;
 }
 
 main .form h2 {
