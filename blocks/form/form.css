@@ -1,6 +1,6 @@
 main .form {
   background-color: white;
-  padding: var(--spacing-s);
+  padding: 20px;
   border-radius: var(--card-border-radius-l);
   filter: var(--image-filter-drop-shadow-small);
   border: solid 1px black;
