@@ -13,7 +13,8 @@
   font-size: 12px;
 }
 .embed-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 .embed-container iframe {
   height: 250px;
