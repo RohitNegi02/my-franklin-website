@@ -279,8 +279,14 @@ main .section {
 main .section.highlight {
   /* background-color: var(--highlight-background-color); */
 }
+.links {
+}
 .links div p {
   display: flex;
   gap: 59px;
   height: 20px;
+}
+.links div p strong {
+  background-color: #035fe6;
+  color: white;
 }
