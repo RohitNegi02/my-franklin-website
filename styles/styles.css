@@ -287,7 +287,9 @@ main .section.highlight {
   height: 30px;
 }
 .links div p strong a {
-  background-color: #035fe6;
   color: white;
   margin: 15px;
+}
+.links div p strong {
+  background-color: #035fe6;
 }
