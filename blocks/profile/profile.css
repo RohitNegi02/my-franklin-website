@@ -4,3 +4,6 @@
   margin: 30px;
   background-color: beige;
 }
+.profile-images {
+  border-radius: 50%;
+}
