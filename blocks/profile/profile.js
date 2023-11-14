@@ -1,8 +1,8 @@
 export default function decorate(block) {
   [...block.children].forEach((row) => {
-    if (row.querySelector("p")) {
-      row.className = "profile-details";
+    if (row.querySelector("picture")) {
+      row.className = "profile-images";
     }
-    row.className = "profile-images";
+    row.className = "profile-details";
   });
 }
