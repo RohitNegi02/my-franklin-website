@@ -292,6 +292,7 @@ main .section.highlight {
   background-color: #035fe6;
   padding-top: 20px;
   height: 40px;
+  border-radius: 25px;
 }
 .links div p strong a {
   color: white;
