@@ -1,6 +1,6 @@
 export default function decorate(block) {
   [...block.children].forEach((row) => {
-    row.classList.add(`mystyle${row}`);
+    row.className = "cards-card-image";
     console.log("under the profile card s");
   });
 }
