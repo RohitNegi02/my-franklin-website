@@ -290,7 +290,8 @@ main .section.highlight {
 }
 .links div p strong {
   background-color: #035fe6;
-  padding-top: 9px;
+  padding-top: 20px;
+  height: 40px;
 }
 .links div p strong a {
   color: white;
