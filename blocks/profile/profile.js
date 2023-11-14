@@ -1,6 +1,7 @@
 export default function decorate(block) {
   [...block.children].forEach((div) => {
-    if (div.querySelector("img")) div.className = "profile-image";
+    // console.log();
+    if (div.querySelector("picture") != null) div.className = "profile-image";
     div.className = "profile-details";
   });
 }
