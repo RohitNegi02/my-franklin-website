@@ -2,7 +2,7 @@ export default function decorate(block) {
   [...block.children].forEach((row) => {
     // console.log();
 
-    if (row.querySelector("picture")) row.className = "profile-image";
-    row.className = "profile-details";
+    if (row.querySelector("p")) row.className = "profile-details";
+    row.className = "profile-images";
   });
 }
