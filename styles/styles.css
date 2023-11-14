@@ -286,10 +286,10 @@ main .section.highlight {
   gap: 59px;
   height: 30px;
 }
+.links div p strong {
+  background-color: #035fe6;
+}
 .links div p strong a {
   color: white;
   margin: 15px;
-}
-.links div p strong {
-  background-color: #035fe6;
 }
