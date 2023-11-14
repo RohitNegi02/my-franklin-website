@@ -279,7 +279,7 @@ main .section {
 main .section.highlight {
   /* background-color: var(--highlight-background-color); */
 }
-.links > div > p {
+.links div p {
   display: flex;
   gap: 59px;
   height: 20px;
