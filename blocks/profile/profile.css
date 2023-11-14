@@ -3,6 +3,7 @@
   gap: 50px;
   margin: 30px;
   background-color: lightgray;
+  border-bottom: solid 2px blue;
 }
 .profile img {
   border-radius: 50%;
