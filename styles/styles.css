@@ -280,14 +280,17 @@ main .section.highlight {
   /* background-color: var(--highlight-background-color); */
 }
 .links {
+  padding-top: 20px;
 }
 .links div p {
   display: flex;
   gap: 59px;
-  height: 30px;
+  height: 40px;
+  align-items: center;
 }
 .links div p strong {
   background-color: #035fe6;
+  padding-top: 9px;
 }
 .links div p strong a {
   color: white;
