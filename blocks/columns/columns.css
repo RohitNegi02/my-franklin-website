@@ -37,3 +37,6 @@
   display: grid;
   grid-template-columns: 3fr 2fr;
 }
+.hero-column > div h3 {
+  color: #616161;
+}
