@@ -21,3 +21,6 @@
 .embed-container .embed-wrapper {
   width: 430px;
 }
+.full-screen {
+  display: block !important;
+}
