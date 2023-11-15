@@ -24,3 +24,6 @@
 .full-screen {
   display: block !important;
 }
+.full-screen .embed-wrapper {
+  width: auto;
+}
