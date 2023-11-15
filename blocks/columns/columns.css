@@ -33,7 +33,7 @@
     order: unset;
   }
 }
-.hero-column > div {
+.hero-column > div > div > div {
   display: grid;
   grid-template-columns: 3fr 2fr;
 }
