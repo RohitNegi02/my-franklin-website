@@ -23,6 +23,7 @@
 }
 .full-screen {
   display: block !important;
+  height: auto;
 }
 .full-screen .embed-wrapper {
   width: auto;
