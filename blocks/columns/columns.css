@@ -33,3 +33,7 @@
     order: unset;
   }
 }
+.hero-column > div {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+}
