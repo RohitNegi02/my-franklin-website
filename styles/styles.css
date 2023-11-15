@@ -298,3 +298,6 @@ main .section.highlight {
   color: white;
   margin: 15px;
 }
+.highlight > .default-content-wrapper {
+  padding: 50px;
+}
