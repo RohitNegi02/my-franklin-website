@@ -277,7 +277,7 @@ main .section {
 
 /* section metadata */
 main .section.highlight {
-  /* background-color: var(--highlight-background-color); */
+  background-color: var(--highlight-background-color);
 }
 .links {
   padding-top: 20px;
