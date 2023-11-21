@@ -38,17 +38,10 @@ async function getWeather() {
     .then((result) => {
       console.log(result);
       const headernav = document.getElementById("nav");
-      // const markup = `<div class="weather">
-      // </div>`;
 
-      let markup = generateMarkup(result);
-      // const markup = document.createElement("div1");
-      function generateMarkup(result) {
-        return ` <div class="block-post-products" >
-    
-    <div class="img-txt-products"><span></span></div>
-    </div>`;
-      }
+      const markup = document.createElement("div");
+      markup.classList.add("weather");
+
       headernav.insertAdjacentElement("beforeend", markup);
     })
     .catch((error) => console.log("error", error));
