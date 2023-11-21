@@ -22,7 +22,7 @@ function closeOnEscape(e) {
   }
 }
 //weather
-let markup = "";
+
 async function getWeather() {
   var myHeaders = new Headers();
   myHeaders.append("key", "d0dd193a59ae446787a123251232111");
@@ -38,9 +38,9 @@ async function getWeather() {
     .then((result) => {
       console.log(result);
       const headernav = document.getElementById("nav");
-      headernav.insertAdjacentElement("afterbegin", markup);
       const markup = ` <div class="weather">${result.curent.temp_c}
       </div>`;
+      headernav.insertAdjacentElement("afterbegin", markup);
     })
     .catch((error) => console.log("error", error));
 }
