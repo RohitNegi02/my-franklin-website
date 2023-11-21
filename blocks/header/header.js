@@ -2,7 +2,7 @@ import { getMetadata, decorateIcons } from "../../scripts/lib-franklin.js";
 
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia("(min-width: 900px)");
-
+const headernav = document.getElementById("nav");
 function closeOnEscape(e) {
   if (e.code === "Escape") {
     const nav = document.getElementById("nav");
@@ -36,7 +36,6 @@ async function getWeather() {
   fetch("https://api.weatherapi.com/v1/current.json?q=paris", requestOptions)
     .then((response) => response.json())
     .then((result) => {
-      const headernav = document.getElementById("nav");
       const markup = document.createElement("div");
       markup.classList.add("weather");
       markup.innerHTML = `Temp ${result.current.temp_c}°C`;
