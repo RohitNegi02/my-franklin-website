@@ -22,6 +22,7 @@ function closeOnEscape(e) {
   }
 }
 //weather
+let markup = "";
 async function getWeather() {
   var myHeaders = new Headers();
   myHeaders.append("key", "d0dd193a59ae446787a123251232111");
