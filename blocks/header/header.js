@@ -36,7 +36,7 @@ async function getWeather() {
     .then((response) => response.text())
     .then((result) => {
       console.log(result);
-      const weather = document.createElement("div");
+      const weather = document.createElement("div1");
       weather.classList.add("weather");
     })
     .catch((error) => console.log("error", error));
