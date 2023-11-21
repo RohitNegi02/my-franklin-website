@@ -2,7 +2,7 @@ import { getMetadata, decorateIcons } from "../../scripts/lib-franklin.js";
 
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia("(min-width: 900px)");
-const headernav = document.getElementById("nav");
+
 function closeOnEscape(e) {
   if (e.code === "Escape") {
     const nav = document.getElementById("nav");
@@ -24,6 +24,7 @@ function closeOnEscape(e) {
 //weather
 
 async function getWeather() {
+  const headernav = document.getElementById("nav");
   var myHeaders = new Headers();
   myHeaders.append("key", "d0dd193a59ae446787a123251232111");
 
