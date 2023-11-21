@@ -32,7 +32,7 @@ async function getWeather() {
     redirect: "follow",
   };
 
-  fetch("http://api.weatherapi.com/v1/current.json?q=paris", requestOptions)
+  fetch("https://api.weatherapi.com/v1/current.json?q=paris", requestOptions)
     .then((response) => response.text())
     .then((result) => console.log(result))
     .catch((error) => console.log("error", error));
