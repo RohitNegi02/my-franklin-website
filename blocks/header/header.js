@@ -40,6 +40,7 @@ async function getWeather() {
       const headernav = document.getElementById("nav");
       // const markup = `<div class="weather">
       // </div>`;
+      let markup = "";
       markup = generateMarkup(result);
       // const markup = document.createElement("div1");
       function generateMarkup(result) {
