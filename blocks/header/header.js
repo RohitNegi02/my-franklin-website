@@ -21,7 +21,22 @@ function closeOnEscape(e) {
     }
   }
 }
+//weather
+async function getWeather() {
+  var myHeaders = new Headers();
+  myHeaders.append("key", "d0dd193a59ae446787a123251232111");
 
+  var requestOptions = {
+    method: "GET",
+    headers: myHeaders,
+    redirect: "follow",
+  };
+
+  fetch("http://api.weatherapi.com/v1/current.json?q=paris", requestOptions)
+    .then((response) => response.text())
+    .then((result) => console.log(result))
+    .catch((error) => console.log("error", error));
+}
 function openOnKeydown(e) {
   const focused = document.activeElement;
   const isNavDrop = focused.className === "nav-drop";
@@ -140,22 +155,7 @@ export default async function decorate(block) {
         });
       });
     }
-    //weather
-    async function getWeather() {
-      var myHeaders = new Headers();
-      myHeaders.append("key", "d0dd193a59ae446787a123251232111");
 
-      var requestOptions = {
-        method: "GET",
-        headers: myHeaders,
-        redirect: "follow",
-      };
-
-      fetch("http://api.weatherapi.com/v1/current.json?q=paris", requestOptions)
-        .then((response) => response.text())
-        .then((result) => console.log(result))
-        .catch((error) => console.log("error", error));
-    }
     // hamburger for mobile
     const hamburger = document.createElement("div");
     hamburger.classList.add("nav-hamburger");
