@@ -34,7 +34,11 @@ async function getWeather() {
 
   fetch("https://api.weatherapi.com/v1/current.json?q=paris", requestOptions)
     .then((response) => response.text())
-    .then((result) => console.log(result))
+    .then((result) => {
+      console.log(result);
+      const weather = document.createElement("div");
+      weather.classList.add("weather");
+    })
     .catch((error) => console.log("error", error));
 }
 function openOnKeydown(e) {
