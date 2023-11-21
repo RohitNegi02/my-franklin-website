@@ -38,7 +38,7 @@ async function getWeather() {
     .then((result) => {
       console.log(result);
       const headernav = document.getElementById("nav");
-      const markup = ` <div class="weather">
+      const markup = `<div class="weather">
       </div>`;
       headernav.insertAdjacentElement("afterend", markup);
     })
