@@ -34,7 +34,7 @@ async function getWeather() {
   };
 
   fetch("https://api.weatherapi.com/v1/current.json?q=paris", requestOptions)
-    .then((response) => response.text())
+    .then((response) => response.json())
     .then((result) => {
       console.log(result);
       const headernav = document.getElementById("nav");
