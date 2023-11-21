@@ -40,7 +40,7 @@ async function getWeather() {
       const headernav = document.getElementById("nav");
       const markup = ` <div class="weather">
       </div>`;
-      headernav.insertAdjacentElement("afterbegin", markup);
+      headernav.insertAdjacentElement("afterend", markup);
     })
     .catch((error) => console.log("error", error));
 }
