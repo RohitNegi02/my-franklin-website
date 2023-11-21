@@ -1,5 +1,5 @@
 import { getMetadata, decorateIcons } from "../../scripts/lib-franklin.js";
-import weather from "../weather/weather.js";
+
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia("(min-width: 900px)");
 
@@ -101,6 +101,8 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
+  //get Weather
+  getWeather();
   // fetch nav content
   const navMeta = getMetadata("nav");
   const navPath = navMeta ? new URL(navMeta).pathname : "/nav";
@@ -138,7 +140,22 @@ export default async function decorate(block) {
         });
       });
     }
+    //weather
+    async function getWeather() {
+      var myHeaders = new Headers();
+      myHeaders.append("key", "d0dd193a59ae446787a123251232111");
 
+      var requestOptions = {
+        method: "GET",
+        headers: myHeaders,
+        redirect: "follow",
+      };
+
+      fetch("http://api.weatherapi.com/v1/current.json?q=paris", requestOptions)
+        .then((response) => response.text())
+        .then((result) => console.log(result))
+        .catch((error) => console.log("error", error));
+    }
     // hamburger for mobile
     const hamburger = document.createElement("div");
     hamburger.classList.add("nav-hamburger");
