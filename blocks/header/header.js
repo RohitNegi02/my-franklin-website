@@ -124,7 +124,7 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
  */
 export default async function decorate(block) {
   //get Weather
-  getWeather();
+
   // fetch nav content
   const navMeta = getMetadata("nav");
   const navPath = navMeta ? new URL(navMeta).pathname : "/nav";
@@ -162,7 +162,7 @@ export default async function decorate(block) {
         });
       });
     }
-
+    getWeather();
     // hamburger for mobile
     const hamburger = document.createElement("div");
     hamburger.classList.add("nav-hamburger");
