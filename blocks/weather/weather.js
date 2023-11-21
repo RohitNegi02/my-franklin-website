@@ -1,1 +1,3 @@
-console.log("weather");
+export default function decorate(block) {
+  console.log("weather");
+}
