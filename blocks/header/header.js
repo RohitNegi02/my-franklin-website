@@ -36,12 +36,9 @@ async function getWeather() {
   fetch("https://api.weatherapi.com/v1/current.json?q=paris", requestOptions)
     .then((response) => response.json())
     .then((result) => {
-      console.log(result);
       const headernav = document.getElementById("nav");
-
       const markup = document.createElement("div");
       markup.classList.add("weather");
-      console.log(result);
       markup.innerHTML = `Temp ${result.current.temp_c}°C`;
       headernav.insertAdjacentElement("beforeend", markup);
     })
