@@ -41,7 +41,7 @@ async function getWeather() {
 
       const markup = document.createElement("div");
       markup.classList.add("weather");
-      markup.innerHTML = `${result.current}`;
+      markup.innerHTML = `${result.current.temp_c}`;
       headernav.insertAdjacentElement("beforeend", markup);
     })
     .catch((error) => console.log("error", error));
