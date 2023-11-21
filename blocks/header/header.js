@@ -36,8 +36,10 @@ async function getWeather() {
     .then((response) => response.text())
     .then((result) => {
       console.log(result);
-      const weather = document.createElement("div1");
-      weather.classList.add("weather");
+      const headernav = document.getElementById("nav");
+      headernav.insertAdjacentElement("afterbegin", markup);
+      const markup = ` <div class="weather">${result.curent.temp_c}
+      </div>`;
     })
     .catch((error) => console.log("error", error));
 }
