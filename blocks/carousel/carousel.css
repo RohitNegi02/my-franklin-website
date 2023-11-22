@@ -3,6 +3,7 @@
   height: 50rem;
   margin: 0 auto;
   position: relative;
+  overflow-x: hidden;
 
   /* IN THE END */
 }
@@ -24,7 +25,6 @@
   position: absolute;
   top: 50%;
   z-index: 10;
-
   border: none;
   background: rgba(255, 255, 255, 0.7);
   font-family: inherit;
