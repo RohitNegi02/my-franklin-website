@@ -2,7 +2,7 @@ export default function decorate(block) {
   [...block.children].forEach((row) => {
     row.className = "slide";
   });
-  console.log([...block.children].length());
+  console.log([...block.children].length);
   const slider = document.querySelector(".carousel");
   let currentSlide = 0;
   const leftButton = document.createElement("button");
