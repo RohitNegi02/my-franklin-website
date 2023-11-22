@@ -21,29 +21,7 @@ function closeOnEscape(e) {
     }
   }
 }
-//weather
-getWeather();
-async function getWeather() {
-  const headernav = document.getElementById("nav");
-  var myHeaders = new Headers();
-  myHeaders.append("key", "d0dd193a59ae446787a123251232111");
 
-  var requestOptions = {
-    method: "GET",
-    headers: myHeaders,
-    redirect: "follow",
-  };
-
-  fetch("https://api.weatherapi.com/v1/current.json?q=paris", requestOptions)
-    .then((response) => response.json())
-    .then((result) => {
-      const markup = document.createElement("div");
-      markup.classList.add("weather");
-      markup.innerHTML = `Temp ${result.current.temp_c}°C`;
-      headernav.insertAdjacentElement("beforeend", markup);
-    })
-    .catch((error) => console.log("error", error));
-}
 function openOnKeydown(e) {
   const focused = document.activeElement;
   const isNavDrop = focused.className === "nav-drop";
