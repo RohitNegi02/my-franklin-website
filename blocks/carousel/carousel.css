@@ -40,7 +40,7 @@
   left: 6%;
   transform: translate(-50%, -50%);
 }
-.slider__btn--left:hover {
+.slider__btn:hover {
   background-color: none;
 }
 
