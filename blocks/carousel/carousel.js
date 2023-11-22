@@ -40,5 +40,6 @@ export default function decorate(block) {
     } else {
       currentSlide--;
     }
+    goToSlide(currentSlide);
   });
 }
