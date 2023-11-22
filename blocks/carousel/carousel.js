@@ -4,7 +4,9 @@ export default function decorate(block) {
   });
   const slider = document.querySelector(".carousel");
 
-  slider.append(document.createElement("button"));
+  const leftButton = slider.append(document.createElement("button"));
+  leftButton.classList.add("slider__btn slider__btn--left");
+  leftButton.innerHTML = `&larr;`;
   slider.style.transform = "scale(0.5)";
   slider.style.overflow = "visible";
   const slides = document.querySelectorAll(".slide");
