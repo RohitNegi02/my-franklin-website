@@ -25,7 +25,7 @@ export default function decorate(block) {
   rightButton.addEventListener("click", function () {
     currentSlide++;
     slides.forEach((s, i) => {
-      s.style.transform = `translateX(${100 * i - currentSlide}%)`;
+      s.style.transform = `translateX(${100 * (i - currentSlide)}%)`;
     });
   });
 }
