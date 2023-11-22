@@ -2,7 +2,7 @@ export default function decorate(block) {
   [...block.children].forEach((row) => {
     row.className = "slide";
   });
-  console.log([...block.children].length);
+
   const slider = document.querySelector(".carousel");
   let currentSlide = 0;
   const leftButton = document.createElement("button");
@@ -19,13 +19,17 @@ export default function decorate(block) {
   slider.style.transform = "scale(0.5)";
   slider.style.overflow = "visible";
   const slides = document.querySelectorAll(".slide");
+  const totalSlide = slides.length;
   slides.forEach((s, i) => {
     console.log("slide");
     s.style.transform = `translateX(${100 * i}%)`;
   });
   rightButton.addEventListener("click", function () {
-    currentSlide++;
-
+    if (currentSlide == totalSlide) {
+      currentSlide = 0;
+    } else {
+      currentSlide++;
+    }
     slides.forEach((s, i) => {
       s.style.transform = `translateX(${100 * (i - currentSlide)}%)`;
     });
