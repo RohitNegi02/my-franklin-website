@@ -162,7 +162,7 @@ export default async function decorate(block) {
         });
       });
     }
-    getWeather();
+
     // hamburger for mobile
     const hamburger = document.createElement("div");
     hamburger.classList.add("nav-hamburger");
@@ -185,3 +185,4 @@ export default async function decorate(block) {
     block.append(navWrapper);
   }
 }
+getWeather();
