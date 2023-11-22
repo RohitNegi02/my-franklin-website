@@ -6,7 +6,8 @@ export default function decorate(block) {
 
   const leftButton = document.createElement("button");
   slider.append(leftButton);
-  leftButton.classList.add("sliderbtn sliderbtnLeft");
+  leftButton.classList.add("slider__btn");
+  leftButton.classList.add("slider__btn--left");
   leftButton.innerHTML = `&larr;`;
   slider.style.transform = "scale(0.5)";
   slider.style.overflow = "visible";
