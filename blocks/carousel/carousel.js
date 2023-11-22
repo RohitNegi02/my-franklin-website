@@ -3,11 +3,8 @@ export default function decorate(block) {
     row.className = "slide";
   });
   const slider = document.querySelector(".carousel");
-  slider.append(`<button class="slider__btn slider__btn--left" type="button"  aria-label="Button Left">
-  &larr;
-      </button><button class="slider__btn slider__btn--right" type="button"  aria-label="Button right">
-      &rarr;
-          </button>`);
+
+  slider.append(document.createElement("button"));
   slider.style.transform = "scale(0.5)";
   slider.style.overflow = "visible";
   const slides = document.querySelectorAll(".slide");
