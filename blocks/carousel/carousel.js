@@ -16,8 +16,8 @@ export default function decorate(block) {
   rightButton.classList.add("slider__btn--right");
   rightButton.innerHTML = `&rarr;`;
 
-  slider.style.transform = "scale(0.5)";
-  slider.style.overflow = "visible";
+  // slider.style.transform = "scale(0.5)";
+  // slider.style.overflow = "visible";
   const slides = document.querySelectorAll(".slide");
   const totalSlide = slides.length;
   const goToSlide = function (slide) {
