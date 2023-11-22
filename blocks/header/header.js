@@ -161,8 +161,9 @@ export default async function decorate(block) {
           }
         });
       });
+      getWeather();
     }
-    getWeather();
+
     // hamburger for mobile
     const hamburger = document.createElement("div");
     hamburger.classList.add("nav-hamburger");
