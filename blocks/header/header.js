@@ -179,7 +179,7 @@ export default async function decorate(block) {
         const markup = document.createElement("div");
         markup.classList.add("weather");
         markup.innerHTML = `Temp ${result.current.temp_c}°C`;
-        nav.insertAdjacentElement("beforeend", markup);
+        nav.append(markup);
       })
       .catch((error) => console.log("error", error));
 
