@@ -1,5 +1,6 @@
 export default function decorate(block) {
-  [...block.children].forEach((row) => {
-    row.className = "slide";
-  });
+  // [...block.children].forEach((row) => {
+  //   row.className = "slide";
+  // });
+  console.log("hello");
 }
