@@ -4,7 +4,8 @@ export default function decorate(block) {
   });
   const slider = document.querySelector(".carousel");
 
-  const leftButton = slider.append(document.createElement("button"));
+  const leftButton = document.createElement("button");
+  slider.append(leftButton);
   leftButton.classList.add("slider__btn slider__btn--left");
   leftButton.innerHTML = `&larr;`;
   slider.style.transform = "scale(0.5)";
