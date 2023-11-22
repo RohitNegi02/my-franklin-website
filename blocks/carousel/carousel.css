@@ -40,16 +40,20 @@
 
 .slider__btn--left {
   left: 6%;
-  transform: translate(-50%, -50%);
+  transform: translate(50%, -118%);
 }
 
 .slider__btn--right {
   right: 6%;
-  transform: translate(50%, -50%);
+  transform: translate(50%, -118%);
 }
 .slide img {
   /* Only for images that have different size than slide */
   width: 1200px;
   height: 500px;
   object-fit: cover;
+}
+button {
+  padding: 0px 16px;
+  margin: 0px;
 }
