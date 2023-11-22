@@ -2,6 +2,7 @@ export default function decorate(block) {
   [...block.children].forEach((row) => {
     row.className = "slide";
   });
+  console.log([...block.children].length());
   const slider = document.querySelector(".carousel");
   let currentSlide = 0;
   const leftButton = document.createElement("button");
@@ -24,6 +25,7 @@ export default function decorate(block) {
   });
   rightButton.addEventListener("click", function () {
     currentSlide++;
+    if(currentSlide==)
     slides.forEach((s, i) => {
       s.style.transform = `translateX(${100 * (i - currentSlide)}%)`;
     });
