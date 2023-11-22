@@ -20,19 +20,19 @@ export default function decorate(block) {
   slider.style.overflow = "visible";
   const slides = document.querySelectorAll(".slide");
   const totalSlide = slides.length;
-  slides.forEach((s, i) => {
-    console.log("slide");
-    s.style.transform = `translateX(${100 * i}%)`;
-  });
+  const goToSlide = function (slide) {
+    slides.forEach((s, i) => {
+      s.style.transform = `translateX(${100 * (i - slide)}%)`;
+    });
+  };
+  goToSlide(0);
   rightButton.addEventListener("click", function () {
     if (currentSlide == totalSlide - 1) {
       currentSlide = 0;
     } else {
       currentSlide++;
     }
-    slides.forEach((s, i) => {
-      s.style.transform = `translateX(${100 * (i - currentSlide)}%)`;
-    });
+    goToSlide(currentSlide);
   });
   leftButton.addEventListener("click", function () {
     if (currentSlide == 0) {
@@ -40,8 +40,5 @@ export default function decorate(block) {
     } else {
       currentSlide--;
     }
-    slides.forEach((s, i) => {
-      s.style.transform = `translateX(${100 * (i + currentSlide)}%)`;
-    });
   });
 }
