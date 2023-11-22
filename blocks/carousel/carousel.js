@@ -25,7 +25,7 @@ export default function decorate(block) {
     s.style.transform = `translateX(${100 * i}%)`;
   });
   rightButton.addEventListener("click", function () {
-    if (currentSlide == totalSlide) {
+    if (currentSlide == totalSlide - 1) {
       currentSlide = 0;
     } else {
       currentSlide++;
@@ -35,7 +35,11 @@ export default function decorate(block) {
     });
   });
   leftButton.addEventListener("click", function () {
-    currentSlide--;
+    if (currentSlide == 0) {
+      currentSlide = totalSlide - 1;
+    } else {
+      currentSlide--;
+    }
     slides.forEach((s, i) => {
       s.style.transform = `translateX(${100 * (i + currentSlide)}%)`;
     });
