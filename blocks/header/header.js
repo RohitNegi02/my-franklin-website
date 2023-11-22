@@ -22,7 +22,7 @@ function closeOnEscape(e) {
   }
 }
 //weather
-
+getWeather();
 async function getWeather() {
   const headernav = document.getElementById("nav");
   var myHeaders = new Headers();
@@ -185,4 +185,3 @@ export default async function decorate(block) {
     block.append(navWrapper);
   }
 }
-getWeather();
