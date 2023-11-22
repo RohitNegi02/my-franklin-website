@@ -10,4 +10,9 @@ export default function decorate(block) {
     console.log("slide");
     s.style.transform = `translateX(${100 * i}%)`;
   });
+  slider.innerHTML = `<button class="slider__btn slider__btn--left" type="button"  aria-label="Button Left">
+  &larr;
+      </button><button class="slider__btn slider__btn--right" type="button"  aria-label="Button right">
+      &rarr;
+          </button>`;
 }
