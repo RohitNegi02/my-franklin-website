@@ -40,9 +40,6 @@
   left: 6%;
   transform: translate(-50%, -50%);
 }
-.slider__btn:hover {
-  background: rgba(255, 255, 255, 0.7);
-}
 
 .slider__btn--right {
   right: 6%;
