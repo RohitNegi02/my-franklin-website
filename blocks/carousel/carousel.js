@@ -2,7 +2,7 @@ export default function decorate(block) {
   [...block.children].forEach((row) => {
     row.className = "slide";
   });
-  const slider = document.querySelector(".crousel");
+  const slider = document.querySelector(".carousel");
   slider.style.transform = scale(0.5);
   slider.style.overflow = visible;
   const slides = document.querySelectorAll(".slide");
