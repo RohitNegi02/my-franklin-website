@@ -28,4 +28,10 @@ export default function decorate(block) {
       s.style.transform = `translateX(${100 * (i - currentSlide)}%)`;
     });
   });
+  leftButton.addEventListener("click", function () {
+    currentSlide--;
+    slides.forEach((s, i) => {
+      s.style.transform = `translateX(${100 * (i + currentSlide)}%)`;
+    });
+  });
 }
