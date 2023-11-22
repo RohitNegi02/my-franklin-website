@@ -1,11 +1,14 @@
 .carousel {
   max-width: 100rem;
-  height: 50rem;
+  height: 35rem;
   margin: 0 auto;
   position: relative;
   overflow-x: hidden;
 
   /* IN THE END */
+}
+.carousel-container {
+  background-color: black;
 }
 
 .slide {
