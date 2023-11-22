@@ -162,6 +162,26 @@ export default async function decorate(block) {
         });
       });
     }
+    //weather
+
+    var myHeaders = new Headers();
+    myHeaders.append("key", "d0dd193a59ae446787a123251232111");
+
+    var requestOptions = {
+      method: "GET",
+      headers: myHeaders,
+      redirect: "follow",
+    };
+
+    fetch("https://api.weatherapi.com/v1/current.json?q=paris", requestOptions)
+      .then((response) => response.json())
+      .then((result) => {
+        const markup = document.createElement("div");
+        markup.classList.add("weather");
+        markup.innerHTML = `Temp ${result.current.temp_c}°C`;
+        nav.insertAdjacentElement("beforeend", markup);
+      })
+      .catch((error) => console.log("error", error));
 
     // hamburger for mobile
     const hamburger = document.createElement("div");
