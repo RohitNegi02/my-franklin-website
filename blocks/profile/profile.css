@@ -4,6 +4,11 @@
   margin: 30px 0px;
   /* border-bottom: solid 2px blue; */
 }
+.profile a {
+  background-color: none;
+}
 .profile img {
   border-radius: 50%;
+}
+.profile .icon-linkedin {
 }
