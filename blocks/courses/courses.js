@@ -23,7 +23,7 @@ export default function decorate(block) {
   )
     .then((response) => response.text())
     .then((result) => {
-      console.log(result.data);
+      console.log(result);
       // renderMarkup(result, true);
     })
     .catch((error) => console.log("error", error));
