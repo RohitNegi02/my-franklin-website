@@ -16,7 +16,7 @@ export default function decorate(block) {
     headers: myHeaders,
     redirect: "follow",
   };
-
+  const parentEl = document.querySelector(".my-course");
   fetch(
     "https://captivateprime.adobe.com/primeapi/v2/learningObjects?page[limit]=10&filter.loTypes=course&sort=name&filter.ignoreEnhancedLP=true",
     requestOptions
@@ -24,12 +24,13 @@ export default function decorate(block) {
     .then((response) => response.json())
     .then((result) => {
       console.log(result.data);
+      parentEl.insertAdjacentHTML("afterend", `<div class="numList"></div>`);
       renderMarkup(result.data, true);
     })
     .catch((error) => console.log("error", error));
 }
 const renderMarkup = function (result, value) {
-  const parentEl = document.querySelector(".my-course");
+  const pagEl = document.querySelector(".numList");
   const markup = generateMarkuploop();
   parentEl.innerHTML = "";
   parentEl.insertAdjacentHTML("afterbegin", markup);
@@ -45,3 +46,31 @@ const renderMarkup = function (result, value) {
   }
   return markup;
 };
+function pagination() {
+  const courseList = document.querySelectorAll(".block-post-products");
+  let num1 = courseList.length;
+  let onepage = Math.ceil(num1 / 6);
+  pagEl.innerHTML = "";
+  for (let i = onepage; i > 0; i--) {
+    pagEl.insertAdjacentHTML("afterbegin", `<span class="pageNum">${i}</span>`);
+  }
+  const pagBtn = document.querySelectorAll(".pageNum");
+  for (let j = 0; j < 6; j++) {
+    courseList[j].classList.remove("dis");
+  }
+  pagBtn.forEach(function (btn, i) {
+    btn.addEventListener("click", function () {
+      currentval = Number(btn.textContent);
+      for (let i = 0; i < courseList.length; i++) {
+        courseList[i].classList.add("dis");
+      }
+      for (
+        let j = 0 + (currentval - 1) * 6;
+        j < 6 * (currentval - 1 + 1);
+        j++
+      ) {
+        courseList[j].classList.remove("dis");
+      }
+    });
+  });
+}

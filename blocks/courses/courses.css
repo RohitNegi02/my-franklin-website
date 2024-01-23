@@ -1,16 +1,18 @@
 .my-course {
   display: grid;
   grid-template-columns: 319px 319px 319px;
-  width: 103rem;
+  width: 84rem;
   margin: 0 auto;
   gap: 30px;
 }
 .block-post-products {
   overflow: hidden;
+  border: 1px solid grey;
+  border-radius: 10px;
 }
 .products-img {
-  width: 319px;
-  height: 382px;
+  width: 316px;
+  height: 250px;
 }
 .img-txt-products span {
   font-size: 18px;
