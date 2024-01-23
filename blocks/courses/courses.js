@@ -53,18 +53,18 @@ function pagination() {
   const pagEl = document.querySelector(".numList");
   const courseList = document.querySelectorAll(".block-post-products");
   let num1 = courseList.length;
-  let onepage = Math.ceil(num1 / 6);
+  let onepage = Math.ceil(num1 / 3);
   pagEl.innerHTML = "";
   for (let i = onepage; i > 0; i--) {
     pagEl.insertAdjacentHTML("afterbegin", `<span class="pageNum">${i}</span>`);
   }
   const pagBtn = document.querySelectorAll(".pageNum");
-  for (let j = 0; j < 6; j++) {
+  for (let j = 0; j < 3; j++) {
     courseList[j].classList.remove("dis");
   }
   pagBtn.forEach(function (btn, i) {
     btn.addEventListener("click", function () {
-      currentval = Number(btn.textContent);
+      let currentval = Number(btn.textContent);
       for (let i = 0; i < courseList.length; i++) {
         courseList[i].classList.add("dis");
       }
