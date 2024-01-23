@@ -23,7 +23,6 @@ export default function decorate(block) {
   )
     .then((response) => response.json())
     .then((result) => {
-      console.log(result.data);
       const parentEl = document.querySelector(".my-course");
       parentEl.insertAdjacentHTML("afterend", `<div class="numList"></div>`);
       renderMarkup(result.data, true);
@@ -31,7 +30,24 @@ export default function decorate(block) {
     })
     .catch((error) => console.log("error", error));
 }
+const renderMarkup = function (result, value) {
+  const parentEl = document.querySelector(".my-course");
 
+  const markup = generateMarkuploop();
+  parentEl.innerHTML = "";
+  parentEl.insertAdjacentHTML("afterbegin", markup);
+  function generateMarkuploop() {
+    const Mark = result.map((res) => generateMarkup(res)).join("");
+    return Mark;
+  }
+  function generateMarkup(result) {
+    return ` <div class="block-post-products dis" id="${result.attributes.localizedMetadata[0].overview}">
+<img class="products-img" src="${result.attributes.imageUrl}" alt="" />
+<div class="img-txt-products"><span>${result.attributes.localizedMetadata[0].name}</span></div>
+</div>`;
+  }
+  return markup;
+};
 function pagination() {
   const pagEl = document.querySelector(".numList");
   const courseList = document.querySelectorAll(".block-post-products");
