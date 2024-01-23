@@ -16,7 +16,7 @@ export default function decorate(block) {
     headers: myHeaders,
     redirect: "follow",
   };
-  const parentEl = document.querySelector(".my-course");
+
   fetch(
     "https://captivateprime.adobe.com/primeapi/v2/learningObjects?page[limit]=10&filter.loTypes=course&sort=name&filter.ignoreEnhancedLP=true",
     requestOptions
@@ -24,12 +24,14 @@ export default function decorate(block) {
     .then((response) => response.json())
     .then((result) => {
       console.log(result.data);
+      const parentEl = document.querySelector(".my-course");
       parentEl.insertAdjacentHTML("afterend", `<div class="numList"></div>`);
       renderMarkup(result.data, true);
     })
     .catch((error) => console.log("error", error));
 }
 const renderMarkup = function (result, value) {
+  const parentEl = document.querySelector(".my-course");
   const pagEl = document.querySelector(".numList");
   const markup = generateMarkuploop();
   parentEl.innerHTML = "";
