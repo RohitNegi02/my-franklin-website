@@ -23,3 +23,7 @@
 .dis {
   display: none;
 }
+.pageNum {
+  padding: 4px;
+  cursor: pointer;
+}

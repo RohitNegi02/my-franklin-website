@@ -54,6 +54,7 @@ function pagination() {
   const courseList = document.querySelectorAll(".block-post-products");
   let num1 = courseList.length;
   let onepage = Math.ceil(num1 / 3);
+  console.log(onepage);
   pagEl.innerHTML = "";
   for (let i = onepage; i > 0; i--) {
     pagEl.insertAdjacentHTML("afterbegin", `<span class="pageNum">${i}</span>`);
@@ -69,8 +70,8 @@ function pagination() {
         courseList[i].classList.add("dis");
       }
       for (
-        let j = 0 + (currentval - 1) * 6;
-        j < 6 * (currentval - 1 + 1);
+        let j = 0 + (currentval - 1) * 3;
+        j < 3 * (currentval - 1 + 1);
         j++
       ) {
         courseList[j].classList.remove("dis");
