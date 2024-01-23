@@ -5,7 +5,7 @@ export default function decorate(block) {
   //   }
   //   row.className = "profile-details";
   // });
-  const parentEl = document.querySelector(".courses");
+  const parentEl = document.querySelector(".my-course");
   console.log("Hello Course");
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
