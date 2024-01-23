@@ -9,7 +9,7 @@ export default function decorate(block) {
   console.log("Hello Course");
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
-  myHeaders.append("Authorization", "Bearer 435b1ec07f84682ee281eeba917db0bd");
+  myHeaders.append("Authorization", "Bearer 2b39ac53a29d968b6339a2465715cd87");
 
   var requestOptions = {
     method: "GET",
