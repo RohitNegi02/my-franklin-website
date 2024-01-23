@@ -1,17 +1,20 @@
-.profile {
-  display: flex;
-  gap: 50px;
-  margin: 30px 0px;
-  /* border-bottom: solid 2px blue; */
+.my-course {
+  display: grid;
+  grid-template-columns: 319px 319px 319px;
+  width: 103rem;
+  margin: 0 auto;
+  gap: 30px;
 }
-.profile a {
-  background-color: var(--background-color) !important;
-  border: 0px !important;
-  margin: 0px !important;
-  padding: 0px !important;
+.block-post-products {
+  overflow: hidden;
 }
-.profile img {
-  border-radius: 50%;
+.products-img {
+  width: 319px;
+  height: 382px;
 }
-.profile .icon-linkedin {
+.img-txt-products span {
+  font-size: 18px;
+  display: block;
+  padding: 10px;
+  font-family: muli;
 }
