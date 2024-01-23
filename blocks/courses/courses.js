@@ -33,7 +33,7 @@ export default function decorate(block) {
 }
 const renderMarkup = function (result, value) {
   const parentEl = document.querySelector(".my-course");
-  const pagEl = document.querySelector(".numList");
+
   const markup = generateMarkuploop();
   parentEl.innerHTML = "";
   parentEl.insertAdjacentHTML("afterbegin", markup);
@@ -50,6 +50,7 @@ const renderMarkup = function (result, value) {
   return markup;
 };
 function pagination() {
+  const pagEl = document.querySelector(".numList");
   const courseList = document.querySelectorAll(".block-post-products");
   let num1 = courseList.length;
   let onepage = Math.ceil(num1 / 6);
