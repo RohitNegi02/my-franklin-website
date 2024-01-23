@@ -1,7 +1,7 @@
 .my-course {
   display: grid;
-  grid-template-columns: 319px 319px 319px;
-  width: 84rem;
+  grid-template-columns: 1fr 1fr 1fr;
+
   margin: 0 auto;
   gap: 30px;
 }
@@ -34,4 +34,7 @@
   justify-content: center;
   padding: 90px 0px;
   gap: 30px;
+}
+.grey {
+  background-color: grey;
 }
