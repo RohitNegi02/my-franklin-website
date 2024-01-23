@@ -5,6 +5,7 @@ export default function decorate(block) {
   //   }
   //   row.className = "profile-details";
   // });
+  const parentEl = document.querySelector(".courses");
   console.log("Hello Course");
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
@@ -21,6 +22,25 @@ export default function decorate(block) {
     requestOptions
   )
     .then((response) => response.text())
-    .then((result) => console.log(result))
+    .then((result) => {
+      console.log(result.data);
+      // renderMarkup(result, true);
+    })
     .catch((error) => console.log("error", error));
 }
+const renderMarkup = function (result, value) {
+  const markup = generateMarkuploop();
+  parentEl.innerHTML = "";
+  parentEl.insertAdjacentHTML("afterbegin", markup);
+  function generateMarkuploop() {
+    const Mark = result.map((res) => generateMarkup(res)).join("");
+    return Mark;
+  }
+  function generateMarkup(result) {
+    return ` <div class="block-post-products dis" id="${result.id}">
+<img class="products-img" src="${result.image}" alt="" />
+<div class="img-txt-products"><span>${result.title}</span></div>
+</div>`;
+  }
+  return markup;
+};
