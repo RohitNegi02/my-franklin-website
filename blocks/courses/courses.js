@@ -17,7 +17,7 @@ export default function decorate(block) {
   };
 
   fetch(
-    "https://captivateprime.adobe.com/primeapi/v2/recommendations",
+    "https://captivateprime.adobe.com/primeapi/v2/learningObjects?page[limit]=10&filter.loTypes=course&sort=name&filter.ignoreEnhancedLP=true",
     requestOptions
   )
     .then((response) => response.text())
