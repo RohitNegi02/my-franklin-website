@@ -21,9 +21,9 @@ export default function decorate(block) {
     "https://captivateprime.adobe.com/primeapi/v2/learningObjects?page[limit]=10&filter.loTypes=course&sort=name&filter.ignoreEnhancedLP=true",
     requestOptions
   )
-    .then((response) => response.text())
+    .then((response) => response.json())
     .then((result) => {
-      console.log(result);
+      console.log(result.data);
       // renderMarkup(result, true);
     })
     .catch((error) => console.log("error", error));
