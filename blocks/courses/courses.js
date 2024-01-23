@@ -39,7 +39,7 @@ const renderMarkup = function (result, value) {
   function generateMarkup(result) {
     return ` <div class="block-post-products dis" id="${result.attributes.authorNames[0]}">
 <img class="products-img" src="${result.attributes.imageUrl}" alt="" />
-<div class="img-txt-products"><span>${result.localizedMetadata[0].name}</span></div>
+<div class="img-txt-products"><span>${result.attributes.localizedMetadata[0].name}</span></div>
 </div>`;
   }
   return markup;
