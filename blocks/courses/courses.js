@@ -5,7 +5,7 @@ export default function decorate(block) {
   //   }
   //   row.className = "profile-details";
   // });
-  const parentEl = document.querySelector(".my-course");
+
   console.log("Hello Course");
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
@@ -29,6 +29,7 @@ export default function decorate(block) {
     .catch((error) => console.log("error", error));
 }
 const renderMarkup = function (result, value) {
+  const parentEl = document.querySelector(".my-course");
   const markup = generateMarkuploop();
   parentEl.innerHTML = "";
   parentEl.insertAdjacentHTML("afterbegin", markup);
