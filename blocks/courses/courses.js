@@ -24,7 +24,7 @@ export default function decorate(block) {
     .then((response) => response.json())
     .then((result) => {
       console.log(result.data);
-      // renderMarkup(result, true);
+      renderMarkup(result.data, true);
     })
     .catch((error) => console.log("error", error));
 }
@@ -37,9 +37,9 @@ const renderMarkup = function (result, value) {
     return Mark;
   }
   function generateMarkup(result) {
-    return ` <div class="block-post-products dis" id="${result.id}">
-<img class="products-img" src="${result.image}" alt="" />
-<div class="img-txt-products"><span>${result.title}</span></div>
+    return ` <div class="block-post-products dis" id="${result.attributes.authorNames[0]}">
+<img class="products-img" src="${result.attributes.imageUrl}" alt="" />
+<div class="img-txt-products"><span>${result.localizedMetadata[0].name}</span></div>
 </div>`;
   }
   return markup;
