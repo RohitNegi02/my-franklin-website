@@ -162,7 +162,7 @@ export default async function decorate(block) {
       .catch((error) => console.log("error", error));
     //Login
     Window.onload = handlePrimeLogIn();
-    document.getElementById("myButton").onclick = getCpOauthUrl;
+
     async function handlePrimeLogIn() {
       console.log("handlePrimeLogIn");
       // const isLoggedIn = this.isLoggedIn();
@@ -178,6 +178,7 @@ export default async function decorate(block) {
         markup.setAttribute("id", "myButton");
         markup.innerHTML = "LOG IN";
         nav.append(markup);
+        document.getElementById("myButton").onclick = getCpOauthUrl;
       }
     }
     async function fetchToken(code) {
