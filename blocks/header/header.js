@@ -171,7 +171,7 @@ export default async function decorate(block) {
       console.log("hello");
       if (code) {
         console.log("inside oauthcode");
-        await this.fetchToken(code);
+        await fetchToken(code);
       } else {
         const markup = document.createElement("button");
 
