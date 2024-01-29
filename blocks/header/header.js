@@ -195,7 +195,7 @@ export default async function decorate(block) {
         .then((response) => response.json())
         .then((result) => {
           console.log(result);
-          document.cookie = access_token + "=" + (result.access_token || "");
+          document.cookie = "access_token" + "=" + (result.access_token || "");
         })
         .catch((error) => console.log("error", error));
     }
