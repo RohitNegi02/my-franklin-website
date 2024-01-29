@@ -192,15 +192,16 @@ export default async function decorate(block) {
         `https://learningmanager.adobe.com/oauth/token?client_id=62f33554-103c-4fcb-b68c-d35c1d3da6a5&client_secret=1af6582a-175e-4499-82c6-c250c953f368&refresh_token=dcca7da80d5c17dd6360d9f95c449783&code=${code}`,
         requestOptions
       )
-        .then((response) => response.text())
-        .then((result) => console.log(result))
+        .then((response) => response.json())
+        .then((result) => {console.log(result);
+          document.cookie = access_token + "=" + (result. || "")})
         .catch((error) => console.log("error", error));
     }
     function getCpOauthUrl() {
       console.log("getCpOauthUrl");
 
       document.location.href =
-        "https://learningmanager.adobe.com/oauth/o/authorize?account=121816&client_id=62f33554-103c-4fcb-b68c-d35c1d3da6a5&redirect_uri=http://localhost:5500/test.html&state=cpState&scope=learner:read,learner:write&response_type=CODE&client_identifier=aemsite&logoutAfterAuthorize=true";
+        "https://learningmanager.adobe.com/oauth/o/authorize?account=121816&client_id=62f33554-103c-4fcb-b68c-d35c1d3da6a5&redirect_uri=https://main--my-franklin-website--rohitnegi02.hlx.page/details.html&state=cpState&scope=learner:read,learner:write&response_type=CODE&client_identifier=aemsite&logoutAfterAuthorize=true";
     }
     // hamburger for mobile
     const hamburger = document.createElement("div");
