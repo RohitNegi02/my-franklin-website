@@ -9,7 +9,7 @@ export default function decorate(block) {
   console.log("Hello Course");
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
-  myHeaders.append("Authorization", "Bearer 2b39ac53a29d968b6339a2465715cd87");
+  myHeaders.append("Authorization", "Bearer 87cc1cc03f860a3cc24ae40186c5425e");
 
   var requestOptions = {
     method: "GET",
@@ -23,6 +23,7 @@ export default function decorate(block) {
   )
     .then((response) => response.json())
     .then((result) => {
+      console.log(result.data);
       const parentEl = document.querySelector(".my-course");
       parentEl.insertAdjacentHTML("afterend", `<div class="numList"></div>`);
       renderMarkup(result.data, true);
