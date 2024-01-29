@@ -160,7 +160,45 @@ export default async function decorate(block) {
         nav.append(markup);
       })
       .catch((error) => console.log("error", error));
+    //Login
+    Window.onload = handlePrimeLogIn();
+    document.getElementById("myButton").onclick = getCpOauthUrl;
+    async function handlePrimeLogIn() {
+      console.log("handlePrimeLogIn");
+      // const isLoggedIn = this.isLoggedIn();
+      const currentUrl = new URL(window.location.href);
+      const code = currentUrl.searchParams.get("code");
+      if (code) {
+        console.log("inside oauthcode");
+        await this.fetchToken(code);
+      } else {
+        const markup = document.createElement("button");
 
+        markup.setAttribute("id", "myButton");
+        markup.innerHTML = "LOG IN";
+        nav.append(markup);
+      }
+    }
+    async function fetchToken(code) {
+      var requestOptions = {
+        method: "POST",
+        redirect: "follow",
+      };
+
+      fetch(
+        `https://learningmanager.adobe.com/oauth/token?client_id=62f33554-103c-4fcb-b68c-d35c1d3da6a5&client_secret=1af6582a-175e-4499-82c6-c250c953f368&refresh_token=dcca7da80d5c17dd6360d9f95c449783&code=${code}`,
+        requestOptions
+      )
+        .then((response) => response.text())
+        .then((result) => console.log(result))
+        .catch((error) => console.log("error", error));
+    }
+    function getCpOauthUrl() {
+      console.log("getCpOauthUrl");
+
+      document.location.href =
+        "https://learningmanager.adobe.com/oauth/o/authorize?account=121816&client_id=62f33554-103c-4fcb-b68c-d35c1d3da6a5&redirect_uri=http://localhost:5500/test.html&state=cpState&scope=learner:read,learner:write&response_type=CODE&client_identifier=aemsite&logoutAfterAuthorize=true";
+    }
     // hamburger for mobile
     const hamburger = document.createElement("div");
     hamburger.classList.add("nav-hamburger");
