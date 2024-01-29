@@ -25,7 +25,7 @@ export default function decorate(block) {
   console.log(getCookie());
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
-  myHeaders.append("Authorization", "Bearer 87cc1cc03f860a3cc24ae40186c5425e");
+  myHeaders.append("Authorization", `Bearer ${getCookie()}`);
 
   var requestOptions = {
     method: "GET",
