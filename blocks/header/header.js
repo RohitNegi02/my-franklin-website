@@ -187,7 +187,7 @@ export default async function decorate(block) {
         console.log("inside oauthcode");
         await fetchToken(code);
       } else {
-        if (getCookie() != "") {
+        if (getCookie() == "") {
           const markup = document.createElement("button");
           markup.setAttribute("id", "myButton");
           markup.innerHTML = "LOG IN";
