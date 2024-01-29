@@ -193,8 +193,10 @@ export default async function decorate(block) {
         requestOptions
       )
         .then((response) => response.json())
-        .then((result) => {console.log(result);
-          document.cookie = access_token + "=" + (result. || "")})
+        .then((result) => {
+          console.log(result);
+          document.cookie = access_token + "=" + (result.access_token || "");
+        })
         .catch((error) => console.log("error", error));
     }
     function getCpOauthUrl() {
