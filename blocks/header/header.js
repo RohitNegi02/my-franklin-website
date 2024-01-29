@@ -177,9 +177,10 @@ export default async function decorate(block) {
 
         markup.setAttribute("id", "myButton");
         markup.innerHTML = "LOG IN";
+        markup.setAttribute("onclick", getCpOauthUrl);
         nav.append(markup);
       }
-      document.getElementById("myButton").onclick = getCpOauthUrl;
+      //document.getElementById("myButton").onclick = getCpOauthUrl;
     }
     async function fetchToken(code) {
       var requestOptions = {
