@@ -168,6 +168,7 @@ export default async function decorate(block) {
       // const isLoggedIn = this.isLoggedIn();
       const currentUrl = new URL(window.location.href);
       const code = currentUrl.searchParams.get("code");
+      console.log("hello");
       if (code) {
         console.log("inside oauthcode");
         await this.fetchToken(code);
