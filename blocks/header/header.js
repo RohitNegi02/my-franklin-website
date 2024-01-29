@@ -162,7 +162,21 @@ export default async function decorate(block) {
       .catch((error) => console.log("error", error));
     //Login
     Window.onload = handlePrimeLogIn();
-
+    function getCookie() {
+      let name = "access_token" + "=";
+      let decodedCookie = decodeURIComponent(document.cookie);
+      let ca = decodedCookie.split(";");
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == " ") {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
     async function handlePrimeLogIn() {
       console.log("handlePrimeLogIn");
       // const isLoggedIn = this.isLoggedIn();
@@ -173,12 +187,13 @@ export default async function decorate(block) {
         console.log("inside oauthcode");
         await fetchToken(code);
       } else {
-        const markup = document.createElement("button");
-
-        markup.setAttribute("id", "myButton");
-        markup.innerHTML = "LOG IN";
-        markup.addEventListener("click", () => getCpOauthUrl());
-        nav.append(markup);
+        if (getCookie() != "") {
+          const markup = document.createElement("button");
+          markup.setAttribute("id", "myButton");
+          markup.innerHTML = "LOG IN";
+          markup.addEventListener("click", () => getCpOauthUrl());
+          nav.append(markup);
+        }
       }
       //document.getElementById("myButton").onclick = getCpOauthUrl;
     }

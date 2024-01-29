@@ -22,7 +22,7 @@ export default function decorate(block) {
     }
     return "";
   }
-  console.log(getCookie());
+  // console.log(getCookie());
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   myHeaders.append("Authorization", `Bearer ${getCookie()}`);
