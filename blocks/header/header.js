@@ -203,7 +203,7 @@ export default async function decorate(block) {
       console.log("getCpOauthUrl");
 
       document.location.href =
-        "https://learningmanager.adobe.com/oauth/o/authorize?account=121816&client_id=62f33554-103c-4fcb-b68c-d35c1d3da6a5&redirect_uri=https://main--my-franklin-website--rohitnegi02.hlx.page/details.html&state=cpState&scope=learner:read,learner:write&response_type=CODE&client_identifier=aemsite&logoutAfterAuthorize=true";
+        "https://learningmanager.adobe.com/oauth/o/authorize?account=121816&client_id=62f33554-103c-4fcb-b68c-d35c1d3da6a5&redirect_uri=https://main--my-franklin-website--rohitnegi02.hlx.page/details&state=cpState&scope=learner:read,learner:write&response_type=CODE&client_identifier=aemsite&logoutAfterAuthorize=true";
     }
     // hamburger for mobile
     const hamburger = document.createElement("div");
