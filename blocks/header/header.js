@@ -116,7 +116,7 @@ export default async function decorate(block) {
     nav.id = "nav";
     nav.innerHTML = html;
 
-    const classes = ["brand", "sections", "tools", "weather"];
+    const classes = ["brand", "sections", "tools"];
     classes.forEach((c, i) => {
       const section = nav.children[i];
       if (section) section.classList.add(`nav-${c}`);
@@ -142,24 +142,24 @@ export default async function decorate(block) {
     }
     //weather
 
-    var myHeaders = new Headers();
-    myHeaders.append("key", "d0dd193a59ae446787a123251232111");
+    // var myHeaders = new Headers();
+    // myHeaders.append("key", "d0dd193a59ae446787a123251232111");
 
-    var requestOptions = {
-      method: "GET",
-      headers: myHeaders,
-      redirect: "follow",
-    };
+    // var requestOptions = {
+    //   method: "GET",
+    //   headers: myHeaders,
+    //   redirect: "follow",
+    // };
 
-    fetch("https://api.weatherapi.com/v1/current.json?q=paris", requestOptions)
-      .then((response) => response.json())
-      .then((result) => {
-        const markup = document.createElement("div");
-        markup.classList.add("weather");
-        markup.innerHTML = `Temp ${result.current.temp_c}°C`;
-        nav.append(markup);
-      })
-      .catch((error) => console.log("error", error));
+    // fetch("https://api.weatherapi.com/v1/current.json?q=paris", requestOptions)
+    //   .then((response) => response.json())
+    //   .then((result) => {
+    //     const markup = document.createElement("div");
+    //     markup.classList.add("weather");
+    //     markup.innerHTML = `Temp ${result.current.temp_c}°C`;
+    //     nav.append(markup);
+    //   })
+    //   .catch((error) => console.log("error", error));
     //Login
     Window.onload = handlePrimeLogIn();
     function getCookie() {
