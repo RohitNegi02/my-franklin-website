@@ -39,13 +39,15 @@ export default function decorate(block) {
     .catch((error) => console.log("error", error));
   const renderMarkup = function (result, value) {
     const markup = generateMarkuploop();
-
+    const parentEl = document.querySelector(".carouselapi");
+    parentEl.innerHTML = "";
+    parentEl.insertAdjacentHTML("afterbegin", markup);
     function generateMarkuploop() {
       const Mark = result.map((res) => generateMarkup(res)).join("");
       return Mark;
     }
     function generateMarkup(result) {
-      return ` <div class="slide" id="${result.attributes.localizedMetadata[0].overview}">
+      return `<div class="slide" id="${result.attributes.localizedMetadata[0].overview}">
       <div>
     <picture><source  srcset="${result.attributes.imageUrl}" alt="" ><img loading="lazy" src="${result.attributes.imageUrl}"></picture>
    
