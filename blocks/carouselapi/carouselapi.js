@@ -47,7 +47,7 @@ export default function decorate(block) {
       return Mark;
     }
     function generateMarkup(result) {
-      return `<div class="slide" id="${result.attributes.localizedMetadata[0].overview}">
+      return `<div class="slide">
       <div>
     <picture><source  srcset="${result.attributes.imageUrl}" alt="" ><img loading="lazy" src="${result.attributes.imageUrl}"></picture>
    
