@@ -42,6 +42,23 @@ export default function decorate(block) {
     const parentEl = document.querySelector(".carouselapi");
     parentEl.innerHTML = "";
     parentEl.insertAdjacentHTML("afterbegin", markup);
+    const leftButton = parentEl.insertAdjacentHTML(
+      "beforeend",
+      " <button></button>"
+    );
+
+    leftButton.classList.add("slider__btn");
+    leftButton.classList.add("slider__btn--left");
+    leftButton.innerHTML = `&larr;`;
+    // const rightButton = document.createElement("button");
+    const rightButton = slider.insertAdjacentHTML(
+      "beforeend",
+      " <button></button>"
+    );
+
+    rightButton.classList.add("slider__btn");
+    rightButton.classList.add("slider__btn--right");
+    rightButton.innerHTML = `&rarr;`;
     function generateMarkuploop() {
       const Mark = result.map((res) => generateMarkup(res)).join("");
       return Mark;
@@ -59,24 +76,21 @@ export default function decorate(block) {
   };
   const slider = document.querySelector(".carouselapi");
   let currentSlide = 0;
-  const leftButton = slider.insertAdjacentHTML(
-    "beforeend",
-    " <button></button>"
-  );
+
   //document.createElement("button");
-  slider.append(leftButton);
-  leftButton.classList.add("slider__btn");
-  leftButton.classList.add("slider__btn--left");
-  leftButton.innerHTML = `&larr;`;
-  // const rightButton = document.createElement("button");
-  const rightButton = slider.insertAdjacentHTML(
-    "beforeend",
-    " <button></button>"
-  );
-  slider.append(rightButton);
-  rightButton.classList.add("slider__btn");
-  rightButton.classList.add("slider__btn--right");
-  rightButton.innerHTML = `&rarr;`;
+  // slider.append(leftButton);
+  // leftButton.classList.add("slider__btn");
+  // leftButton.classList.add("slider__btn--left");
+  // leftButton.innerHTML = `&larr;`;
+  // // const rightButton = document.createElement("button");
+  // const rightButton = slider.insertAdjacentHTML(
+  //   "beforeend",
+  //   " <button></button>"
+  // );
+  // slider.append(rightButton);
+  // rightButton.classList.add("slider__btn");
+  // rightButton.classList.add("slider__btn--right");
+  // rightButton.innerHTML = `&rarr;`;
 
   const slides = document.querySelectorAll(".slide");
   const totalSlide = slides.length;
