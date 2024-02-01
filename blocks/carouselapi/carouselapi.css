@@ -1,4 +1,4 @@
-.carousel {
+.carouselapi {
   max-width: 100rem;
   height: 35rem;
   margin: 0 auto;
@@ -7,7 +7,7 @@
 
   /* IN THE END */
 }
-.carousel-container {
+.carouselapi-container {
   background-color: black;
 }
 
