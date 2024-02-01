@@ -72,14 +72,13 @@ export default function decorate(block) {
   // let currentSlide = 0;
 
   // const slides = document.querySelectorAll(".slideapi");
-  const slider = document.querySelector(".carouselapi");
+
   let currentSlide = 0;
 
-  const slides = document.querySelectorAll(".slideapi");
-
-  const totalSlide = slides.length;
-  console.log("slides" + totalSlide);
   function goToSlide(slide) {
+    const slides = document.querySelectorAll(".slideapi");
+    const totalSlide = slides.length;
+    console.log("slides" + totalSlide);
     slides.forEach((s, i) => {
       s.style.transform = `translateX(${100 * (i - slide)}%)`;
     });
@@ -99,6 +98,8 @@ export default function decorate(block) {
   rightButton.addEventListener("click", function () {
     console.log("click right");
     // console.log(slide);
+    const slides = document.querySelectorAll(".slideapi");
+    const totalSlide = slides.length;
     if (currentSlide == totalSlide - 1) {
       currentSlide = 0;
     } else {
@@ -107,6 +108,8 @@ export default function decorate(block) {
     goToSlide(currentSlide);
   });
   leftButton.addEventListener("click", function () {
+    const slides = document.querySelectorAll(".slideapi");
+    const totalSlide = slides.length;
     if (currentSlide == 0) {
       currentSlide = totalSlide - 1;
     } else {
