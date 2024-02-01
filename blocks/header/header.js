@@ -178,13 +178,11 @@ export default async function decorate(block) {
       return "";
     }
     async function handlePrimeLogIn() {
-      console.log("handlePrimeLogIn");
       // const isLoggedIn = this.isLoggedIn();
       const currentUrl = new URL(window.location.href);
       const code = currentUrl.searchParams.get("code");
-      console.log("hello");
+
       if (code) {
-        console.log("inside oauthcode");
         await fetchToken(code);
       } else {
         if (getCookie() == "") {
@@ -209,16 +207,13 @@ export default async function decorate(block) {
       )
         .then((response) => response.json())
         .then((result) => {
-          console.log(result);
           document.cookie = "access_token" + "=" + (result.access_token || "");
         })
         .catch((error) => console.log("error", error));
     }
     function getCpOauthUrl() {
-      console.log("getCpOauthUrl");
-
       document.location.href =
-        "https://learningmanager.adobe.com/oauth/o/authorize?account=121816&client_id=62f33554-103c-4fcb-b68c-d35c1d3da6a5&redirect_uri=https://main--my-franklin-website--rohitnegi02.hlx.page/details&state=cpState&scope=learner:read,learner:write&response_type=CODE&client_identifier=aemsite&logoutAfterAuthorize=true";
+        "https://learningmanager.adobe.com/oauth/o/authorize?account=121816&client_id=62f33554-103c-4fcb-b68c-d35c1d3da6a5&redirect_uri=https://main--my-franklin-website--rohitnegi02.hlx.page&state=cpState&scope=learner:read,learner:write&response_type=CODE&client_identifier=aemsite&logoutAfterAuthorize=true";
     }
     // hamburger for mobile
     const hamburger = document.createElement("div");
