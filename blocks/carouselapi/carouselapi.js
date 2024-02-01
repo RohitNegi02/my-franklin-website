@@ -35,7 +35,7 @@ export default function decorate(block) {
     .then((result) => {
       console.log(result.data);
       const parentEl = document.querySelector(".my-course");
-      parentEl.insertAdjacentHTML("afterend", `<div class="numList"></div>`);
+
       renderMarkup(result.data, true);
       pagination();
     })
