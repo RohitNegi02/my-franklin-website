@@ -57,7 +57,7 @@ export default function decorate(block) {
       return Mark;
     }
     function generateMarkup(result) {
-      return `<div class="slide">
+      return `<div class="slideapi">
       <div>
     <picture><source  srcset="${result.attributes.imageUrl}" alt="" ><img loading="lazy" src="${result.attributes.imageUrl}"></picture>
    
@@ -70,7 +70,7 @@ export default function decorate(block) {
   const slider = document.querySelector(".carouselapi");
   let currentSlide = 0;
 
-  const slides = document.querySelectorAll(".slide");
+  const slides = document.querySelectorAll(".slideapi");
   const totalSlide = slides.length;
   const goToSlide = function (slide) {
     slides.forEach((s, i) => {
@@ -80,7 +80,7 @@ export default function decorate(block) {
 
   rightButton.addEventListener("click", function () {
     console.log("click right");
-    console.log(slide);
+    // console.log(slide);
     if (currentSlide == totalSlide - 1) {
       currentSlide = 0;
     } else {

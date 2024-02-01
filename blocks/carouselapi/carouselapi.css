@@ -11,7 +11,7 @@
   background-color: black;
 }
 
-.slide {
+.slideapi {
   position: absolute;
   top: 0;
   width: 100%;
@@ -47,7 +47,7 @@
   right: 6%;
   transform: translate(50%, -118%);
 }
-.slide img {
+.slideapi img {
   /* Only for images that have different size than slide */
   width: 1200px;
   height: 500px;
