@@ -47,18 +47,11 @@ export default function decorate(block) {
       `<button class="slider__btn slider__btn--left">&larr;</button>`
     );
 
-    // leftButton.classList.add("slider__btn");
-    // leftButton.classList.add("slider__btn--left");
-    // leftButton.innerHTML = `&larr;`;
-    // const rightButton = document.createElement("button");
     const rightButton = slider.insertAdjacentHTML(
       "beforeend",
       `<button class="slider__btn slider__btn--right">&rarr;</button>`
     );
-
-    // rightButton.classList.add("slider__btn");
-    // rightButton.classList.add("slider__btn--right");
-    // rightButton.innerHTML = `&rarr;`;
+    goToSlide(0);
     function generateMarkuploop() {
       const Mark = result.map((res) => generateMarkup(res)).join("");
       return Mark;
@@ -77,21 +70,6 @@ export default function decorate(block) {
   const slider = document.querySelector(".carouselapi");
   let currentSlide = 0;
 
-  //document.createElement("button");
-  // slider.append(leftButton);
-  // leftButton.classList.add("slider__btn");
-  // leftButton.classList.add("slider__btn--left");
-  // leftButton.innerHTML = `&larr;`;
-  // // const rightButton = document.createElement("button");
-  // const rightButton = slider.insertAdjacentHTML(
-  //   "beforeend",
-  //   " <button></button>"
-  // );
-  // slider.append(rightButton);
-  // rightButton.classList.add("slider__btn");
-  // rightButton.classList.add("slider__btn--right");
-  // rightButton.innerHTML = `&rarr;`;
-
   const slides = document.querySelectorAll(".slide");
   const totalSlide = slides.length;
   const goToSlide = function (slide) {
@@ -99,8 +77,10 @@ export default function decorate(block) {
       s.style.transform = `translateX(${100 * (i - slide)}%)`;
     });
   };
-  goToSlide(0);
+
   rightButton.addEventListener("click", function () {
+    console.log("click right");
+    console.log(slide);
     if (currentSlide == totalSlide - 1) {
       currentSlide = 0;
     } else {
