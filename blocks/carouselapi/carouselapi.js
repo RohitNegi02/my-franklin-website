@@ -59,12 +59,20 @@ export default function decorate(block) {
   };
   const slider = document.querySelector(".carouselapi");
   let currentSlide = 0;
-  const leftButton = document.createElement("button");
+  const leftButton = slider.insertAdjacentHTML(
+    "beforeend",
+    " <button></button>"
+  );
+  //document.createElement("button");
   slider.append(leftButton);
   leftButton.classList.add("slider__btn");
   leftButton.classList.add("slider__btn--left");
   leftButton.innerHTML = `&larr;`;
-  const rightButton = document.createElement("button");
+  // const rightButton = document.createElement("button");
+  const rightButton = slider.insertAdjacentHTML(
+    "beforeend",
+    " <button></button>"
+  );
   slider.append(rightButton);
   rightButton.classList.add("slider__btn");
   rightButton.classList.add("slider__btn--right");
