@@ -36,18 +36,6 @@ export default function decorate(block) {
       console.log(result.data);
       renderMarkup(result.data, true);
       goToSlide(0);
-      const slider = document.querySelector(".carouselapi");
-      let currentSlide = 0;
-
-      const slides = document.querySelectorAll(".slideapi");
-
-      const totalSlide = slides.length;
-      console.log("slides" + totalSlide);
-      function goToSlide(slide) {
-        slides.forEach((s, i) => {
-          s.style.transform = `translateX(${100 * (i - slide)}%)`;
-        });
-      }
     })
     .catch((error) => console.log("error", error));
   const renderMarkup = function (result, value) {
@@ -60,7 +48,7 @@ export default function decorate(block) {
       `<button class="slider__btn slider__btn--left">&larr;</button>`
     );
 
-    const rightButton = slider.insertAdjacentHTML(
+    const rightButton = parentEl.insertAdjacentHTML(
       "beforeend",
       `<button class="slider__btn slider__btn--right">&rarr;</button>`
     );
@@ -84,7 +72,18 @@ export default function decorate(block) {
   // let currentSlide = 0;
 
   // const slides = document.querySelectorAll(".slideapi");
+  const slider = document.querySelector(".carouselapi");
+  let currentSlide = 0;
 
+  const slides = document.querySelectorAll(".slideapi");
+
+  const totalSlide = slides.length;
+  console.log("slides" + totalSlide);
+  function goToSlide(slide) {
+    slides.forEach((s, i) => {
+      s.style.transform = `translateX(${100 * (i - slide)}%)`;
+    });
+  }
   // const totalSlide = slides.length;
   // console.log("slides" + totalSlide);
   // function goToSlide(slide) {
