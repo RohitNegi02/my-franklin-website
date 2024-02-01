@@ -52,6 +52,11 @@ export default function decorate(block) {
       `<button class="slider__btn slider__btn--right">&rarr;</button>`
     );
     goToSlide(0);
+    const goToSlide = function (slide) {
+      slides.forEach((s, i) => {
+        s.style.transform = `translateX(${100 * (i - slide)}%)`;
+      });
+    };
     function generateMarkuploop() {
       const Mark = result.map((res) => generateMarkup(res)).join("");
       return Mark;
