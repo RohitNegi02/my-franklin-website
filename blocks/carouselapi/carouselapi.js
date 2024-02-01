@@ -34,18 +34,12 @@ export default function decorate(block) {
     .then((response) => response.json())
     .then((result) => {
       console.log(result.data);
-      const parentEl = document.querySelector(".my-course");
-
       renderMarkup(result.data, true);
-      pagination();
     })
     .catch((error) => console.log("error", error));
   const renderMarkup = function (result, value) {
-    const parentEl = document.querySelector(".my-course");
-
     const markup = generateMarkuploop();
-    parentEl.innerHTML = "";
-    parentEl.insertAdjacentHTML("afterbegin", markup);
+
     function generateMarkuploop() {
       const Mark = result.map((res) => generateMarkup(res)).join("");
       return Mark;
