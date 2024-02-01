@@ -35,6 +35,7 @@ export default function decorate(block) {
     .then((result) => {
       console.log(result.data);
       renderMarkup(result.data, true);
+      goToSlide(0);
     })
     .catch((error) => console.log("error", error));
   const renderMarkup = function (result, value) {
@@ -51,12 +52,7 @@ export default function decorate(block) {
       "beforeend",
       `<button class="slider__btn slider__btn--right">&rarr;</button>`
     );
-    goToSlide(0);
-    const goToSlide = function (slide) {
-      slides.forEach((s, i) => {
-        s.style.transform = `translateX(${100 * (i - slide)}%)`;
-      });
-    };
+
     function generateMarkuploop() {
       const Mark = result.map((res) => generateMarkup(res)).join("");
       return Mark;
@@ -82,7 +78,11 @@ export default function decorate(block) {
       s.style.transform = `translateX(${100 * (i - slide)}%)`;
     });
   };
-
+  // const goToSlide = function (slide) {
+  //   slides.forEach((s, i) => {
+  //     s.style.transform = `translateX(${100 * (i - slide)}%)`;
+  //   });
+  // };
   rightButton.addEventListener("click", function () {
     console.log("click right");
     // console.log(slide);
