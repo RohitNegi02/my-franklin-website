@@ -43,14 +43,14 @@ export default function decorate(block) {
     const parentEl = document.querySelector(".carouselapi");
     parentEl.innerHTML = "";
     parentEl.insertAdjacentHTML("afterbegin", markup);
-    const leftButton = parentEl.insertAdjacentHTML(
+    parentEl.insertAdjacentHTML(
       "beforeend",
-      `<button class="slider__btn slider__btn--left">&larr;</button>`
+      `<button id="leftbutton" class="slider__btn slider__btn--left">&larr;</button>`
     );
 
-    const rightButton = parentEl.insertAdjacentHTML(
+    parentEl.insertAdjacentHTML(
       "beforeend",
-      `<button class="slider__btn slider__btn--right">&rarr;</button>`
+      `<button id="rightbutton" class="slider__btn slider__btn--right">&rarr;</button>`
     );
 
     function generateMarkuploop() {
@@ -74,8 +74,18 @@ export default function decorate(block) {
   // const slides = document.querySelectorAll(".slideapi");
 
   let currentSlide = 0;
-  rightButton.addEventListener("click", clickrightButton);
-  leftButton.addEventListener("click", clickLeftButton);
+  const rightbutton = parentEl.getElementById("rightbutton");
+  const leftbutton = parentEl.getElementById("leftbutton");
+  rightbutton.addEventListener("click", clickrightButton);
+  leftbutton.addEventListener("click", clickLeftButton);
+  function goToSlide(slide) {
+    const slides = document.querySelectorAll(".slideapi");
+    const totalSlide = slides.length;
+    console.log("slides" + totalSlide);
+    slides.forEach((s, i) => {
+      s.style.transform = `translateX(${100 * (i - slide)}%)`;
+    });
+  }
   function clickrightButton() {
     console.log("click right");
     // console.log(slide);
@@ -98,14 +108,7 @@ export default function decorate(block) {
     }
     goToSlide(currentSlide);
   }
-  function goToSlide(slide) {
-    const slides = document.querySelectorAll(".slideapi");
-    const totalSlide = slides.length;
-    console.log("slides" + totalSlide);
-    slides.forEach((s, i) => {
-      s.style.transform = `translateX(${100 * (i - slide)}%)`;
-    });
-  }
+
   // const totalSlide = slides.length;
   // console.log("slides" + totalSlide);
   // function goToSlide(slide) {
