@@ -72,12 +72,14 @@ export default function decorate(block) {
   let currentSlide = 0;
 
   const slides = document.querySelectorAll(".slideapi");
+  console.log("slides" + slides);
+
   const totalSlide = slides.length;
-  const goToSlide = function (slide) {
+  function goToSlide(slide) {
     slides.forEach((s, i) => {
       s.style.transform = `translateX(${100 * (i - slide)}%)`;
     });
-  };
+  }
   // const goToSlide = function (slide) {
   //   slides.forEach((s, i) => {
   //     s.style.transform = `translateX(${100 * (i - slide)}%)`;
