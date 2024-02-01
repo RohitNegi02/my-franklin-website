@@ -74,7 +74,30 @@ export default function decorate(block) {
   // const slides = document.querySelectorAll(".slideapi");
 
   let currentSlide = 0;
-
+  rightButton.addEventListener("click", clickrightButton);
+  leftButton.addEventListener("click", clickLeftButton);
+  function clickrightButton() {
+    console.log("click right");
+    // console.log(slide);
+    const slides = document.querySelectorAll(".slideapi");
+    const totalSlide = slides.length;
+    if (currentSlide == totalSlide - 1) {
+      currentSlide = 0;
+    } else {
+      currentSlide++;
+    }
+    goToSlide(currentSlide);
+  }
+  function clickLeftButton() {
+    const slides = document.querySelectorAll(".slideapi");
+    const totalSlide = slides.length;
+    if (currentSlide == 0) {
+      currentSlide = totalSlide - 1;
+    } else {
+      currentSlide--;
+    }
+    goToSlide(currentSlide);
+  }
   function goToSlide(slide) {
     const slides = document.querySelectorAll(".slideapi");
     const totalSlide = slides.length;
@@ -95,26 +118,4 @@ export default function decorate(block) {
   //     s.style.transform = `translateX(${100 * (i - slide)}%)`;
   //   });
   // };
-  rightButton.addEventListener("click", function () {
-    console.log("click right");
-    // console.log(slide);
-    const slides = document.querySelectorAll(".slideapi");
-    const totalSlide = slides.length;
-    if (currentSlide == totalSlide - 1) {
-      currentSlide = 0;
-    } else {
-      currentSlide++;
-    }
-    goToSlide(currentSlide);
-  });
-  leftButton.addEventListener("click", function () {
-    const slides = document.querySelectorAll(".slideapi");
-    const totalSlide = slides.length;
-    if (currentSlide == 0) {
-      currentSlide = totalSlide - 1;
-    } else {
-      currentSlide--;
-    }
-    goToSlide(currentSlide);
-  });
 }
