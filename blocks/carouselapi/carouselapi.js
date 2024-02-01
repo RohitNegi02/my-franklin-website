@@ -17,7 +17,7 @@ export default function decorate(block) {
     }
     return "";
   }
-
+  var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   myHeaders.append("Authorization", `Bearer ${getCookie()}`);
 
