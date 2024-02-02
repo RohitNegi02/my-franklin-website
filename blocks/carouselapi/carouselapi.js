@@ -83,6 +83,7 @@ export default function decorate(block) {
   }
   function sleek() {
     let currentSlide = 0;
+    const parentEl = document.querySelector(".carouselapi");
     const rightbutton = parentEl.getElementById("rightbutton");
     const leftbutton = parentEl.getElementById("leftbutton");
     rightbutton.addEventListener("click", clickrightButton);
