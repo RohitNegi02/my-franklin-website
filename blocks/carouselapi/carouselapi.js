@@ -36,6 +36,7 @@ export default function decorate(block) {
       console.log(result.data);
       renderMarkup(result.data, true);
       goToSlide(0);
+      sleek();
     })
     .catch((error) => console.log("error", error));
   const renderMarkup = function (result, value) {
@@ -72,43 +73,43 @@ export default function decorate(block) {
   // let currentSlide = 0;
 
   // const slides = document.querySelectorAll(".slideapi");
-
-  let currentSlide = 0;
-  const rightbutton = parentEl.getElementById("rightbutton");
-  const leftbutton = parentEl.getElementById("leftbutton");
-  rightbutton.addEventListener("click", clickrightButton);
-  leftbutton.addEventListener("click", clickLeftButton);
-  function goToSlide(slide) {
-    const slides = document.querySelectorAll(".slideapi");
-    const totalSlide = slides.length;
-    console.log("slides" + totalSlide);
-    slides.forEach((s, i) => {
-      s.style.transform = `translateX(${100 * (i - slide)}%)`;
-    });
-  }
-  function clickrightButton() {
-    console.log("click right");
-    // console.log(slide);
-    const slides = document.querySelectorAll(".slideapi");
-    const totalSlide = slides.length;
-    if (currentSlide == totalSlide - 1) {
-      currentSlide = 0;
-    } else {
-      currentSlide++;
+  function sleek() {
+    let currentSlide = 0;
+    const rightbutton = parentEl.getElementById("rightbutton");
+    const leftbutton = parentEl.getElementById("leftbutton");
+    rightbutton.addEventListener("click", clickrightButton);
+    leftbutton.addEventListener("click", clickLeftButton);
+    function goToSlide(slide) {
+      const slides = document.querySelectorAll(".slideapi");
+      const totalSlide = slides.length;
+      console.log("slides" + totalSlide);
+      slides.forEach((s, i) => {
+        s.style.transform = `translateX(${100 * (i - slide)}%)`;
+      });
     }
-    goToSlide(currentSlide);
-  }
-  function clickLeftButton() {
-    const slides = document.querySelectorAll(".slideapi");
-    const totalSlide = slides.length;
-    if (currentSlide == 0) {
-      currentSlide = totalSlide - 1;
-    } else {
-      currentSlide--;
+    function clickrightButton() {
+      console.log("click right");
+      // console.log(slide);
+      const slides = document.querySelectorAll(".slideapi");
+      const totalSlide = slides.length;
+      if (currentSlide == totalSlide - 1) {
+        currentSlide = 0;
+      } else {
+        currentSlide++;
+      }
+      goToSlide(currentSlide);
     }
-    goToSlide(currentSlide);
+    function clickLeftButton() {
+      const slides = document.querySelectorAll(".slideapi");
+      const totalSlide = slides.length;
+      if (currentSlide == 0) {
+        currentSlide = totalSlide - 1;
+      } else {
+        currentSlide--;
+      }
+      goToSlide(currentSlide);
+    }
   }
-
   // const totalSlide = slides.length;
   // console.log("slides" + totalSlide);
   // function goToSlide(slide) {
