@@ -73,20 +73,21 @@ export default function decorate(block) {
   // let currentSlide = 0;
 
   // const slides = document.querySelectorAll(".slideapi");
+  function goToSlide(slide) {
+    const slides = document.querySelectorAll(".slideapi");
+    const totalSlide = slides.length;
+    console.log("slides" + totalSlide);
+    slides.forEach((s, i) => {
+      s.style.transform = `translateX(${100 * (i - slide)}%)`;
+    });
+  }
   function sleek() {
     let currentSlide = 0;
     const rightbutton = parentEl.getElementById("rightbutton");
     const leftbutton = parentEl.getElementById("leftbutton");
     rightbutton.addEventListener("click", clickrightButton);
     leftbutton.addEventListener("click", clickLeftButton);
-    function goToSlide(slide) {
-      const slides = document.querySelectorAll(".slideapi");
-      const totalSlide = slides.length;
-      console.log("slides" + totalSlide);
-      slides.forEach((s, i) => {
-        s.style.transform = `translateX(${100 * (i - slide)}%)`;
-      });
-    }
+
     function clickrightButton() {
       console.log("click right");
       // console.log(slide);
