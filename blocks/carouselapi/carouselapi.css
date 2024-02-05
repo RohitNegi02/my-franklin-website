@@ -40,7 +40,7 @@
 
 .slider__btn--left {
   left: 6%;
-  transform: translate(50%, -118%);
+  transform: translate(-76%, -118%);
 }
 
 .slider__btn--right {
@@ -63,4 +63,7 @@ button {
   position: absolute;
   margin-top: -232px;
   margin-left: 182px;
+  font-size: 37px;
+  font-weight: 1000;
+  font-style: unset;
 }
