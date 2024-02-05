@@ -62,7 +62,7 @@ export default function decorate(block) {
       return `<div class="slideapi">
       <div>
     <picture><source  srcset="${result.attributes.imageUrl}" alt="" ><img loading="lazy" src="${result.attributes.imageUrl}"></picture>
-   
+    <div class="img-txt">${result.attributes.localizedMetadata[0].name}</div>
     </div>
     </div>`;
     }
