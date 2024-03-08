@@ -182,6 +182,7 @@ export default async function decorate(block) {
           markup.setAttribute("id", "myButton");
           markup.innerHTML = "LOG IN";
           markup.addEventListener("click", () =>  getCpOauthUrl());
+      nav.append(markup);
       // const isLoggedIn = this.isLoggedIn();
       // const currentUrl = new URL(window.location.href);
       // const code = currentUrl.searchParams.get("code");
