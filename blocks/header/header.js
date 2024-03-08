@@ -213,7 +213,7 @@ export default async function decorate(block) {
     }
     function getCpOauthUrl() {
       document.location.href =
-        "https://learningmanager.adobe.com/oauth/o/authorize?account=121816&client_id=62f33554-103c-4fcb-b68c-d35c1d3da6a5&redirect_uri=http://localhost:4502/content/core-components-examples/library/adaptive-form/aemembedcontainer.html&state=cpState&scope=learner:read,learner:write&response_type=CODE&client_identifier=aemsite&logoutAfterAuthorize=false";
+        "https://learningmanager.adobe.com/oauth/o/authorize?account=121816&client_id=62f33554-103c-4fcb-b68c-d35c1d3da6a5&redirect_uri=http://localhost:4502/content/core-components-examples/library/adaptive-form/aemembedcontainer.html&state=prime_auth&scope=learner:read,learner:write&response_type=CODE&client_identifier=aemsite&logoutAfterAuthorize=false";
     }
     // hamburger for mobile
     const hamburger = document.createElement("div");
