@@ -162,37 +162,41 @@ export default async function decorate(block) {
     //   .catch((error) => console.log("error", error));
     //Login
     Window.onload = handlePrimeLogIn();
-    function getCookie() {
-      let name = "access_token" + "=";
-      let decodedCookie = decodeURIComponent(document.cookie);
-      let ca = decodedCookie.split(";");
-      for (let i = 0; i < ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) == " ") {
-          c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-          return c.substring(name.length, c.length);
-        }
-      }
-      return "";
-    }
+    // function getCookie() {
+    //   let name = "access_token" + "=";
+    //   let decodedCookie = decodeURIComponent(document.cookie);
+    //   let ca = decodedCookie.split(";");
+    //   for (let i = 0; i < ca.length; i++) {
+    //     let c = ca[i];
+    //     while (c.charAt(0) == " ") {
+    //       c = c.substring(1);
+    //     }
+    //     if (c.indexOf(name) == 0) {
+    //       return c.substring(name.length, c.length);
+    //     }
+    //   }
+    //   return "";
+    // }
     async function handlePrimeLogIn() {
+       const markup = document.createElement("button");
+          markup.setAttribute("id", "myButton");
+          markup.innerHTML = "LOG IN";
+          markup.addEventListener("click", () => getCpOauthUrl();return false;);
       // const isLoggedIn = this.isLoggedIn();
       const currentUrl = new URL(window.location.href);
       const code = currentUrl.searchParams.get("code");
 
-      if (code) {
-        await fetchToken(code);
-      } else {
-        if (getCookie() == "") {
-          const markup = document.createElement("button");
-          markup.setAttribute("id", "myButton");
-          markup.innerHTML = "LOG IN";
-          markup.addEventListener("click", () => getCpOauthUrl();return false;);
-          nav.append(markup);
-        }
-      }
+      // if (code) {
+      //   await fetchToken(code);
+      // } else {
+      //   if (getCookie() == "") {
+      //     const markup = document.createElement("button");
+      //     markup.setAttribute("id", "myButton");
+      //     markup.innerHTML = "LOG IN";
+      //     markup.addEventListener("click", () => getCpOauthUrl();return false;);
+      //     nav.append(markup);
+      //   }
+      // }
       //document.getElementById("myButton").onclick = getCpOauthUrl;
     }
     async function fetchToken(code) {
@@ -212,7 +216,7 @@ export default async function decorate(block) {
         .catch((error) => console.log("error", error));
     }
     function getCpOauthUrl() {
-      location.assign("https://learningmanager.adobe.com/oauth/o/authorize?account=121816&client_id=62f33554-103c-4fcb-b68c-d35c1d3da6a5&redirect_uri=http://localhost:4502/content/core-components-examples/library/adaptive-form/aemembedcontainer.html&state=prime_auth&scope=learner:read,learner:write&response_type=CODE&logoutAfterAuthorize=false");
+      location.href="https://learningmanager.adobe.com/oauth/o/authorize?account=121816&client_id=62f33554-103c-4fcb-b68c-d35c1d3da6a5&redirect_uri=http://localhost:4502/content/core-components-examples/library/adaptive-form/aemembedcontainer.html&state=prime_auth&scope=learner:read,learner:write&response_type=CODE&logoutAfterAuthorize=false";
     }
     // hamburger for mobile
     const hamburger = document.createElement("div");
