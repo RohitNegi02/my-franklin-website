@@ -195,7 +195,7 @@ export default async function decorate(block) {
           markup.setAttribute("id", "myButton");
           markup.innerHTML = "LOG IN";
           markup.addEventListener("click", () =>  getCpOauthUrl() );
-          nav.append(markup);
+        //  nav.append(markup);
         }
        }
       //document.getElementById("myButton").onclick = getCpOauthUrl;
@@ -217,6 +217,7 @@ export default async function decorate(block) {
         .catch((error) => console.log("error", error));
     }
     function getCpOauthUrl() {
+      console.log("hello");
       document.location.href =
         "https://learningmanager.adobe.com/oauth/o/authorize?account=121816&client_id=62f33554-103c-4fcb-b68c-d35c1d3da6a5&redirect_uri=https://main--my-franklin-website--rohitnegi02.hlx.live&state=prime_auth&scope=learner:read,learner:write&response_type=CODE&logoutAfterAuthorize=false";
     }
