@@ -181,7 +181,7 @@ export default async function decorate(block) {
        const markup = document.createElement("button");
           markup.setAttribute("id", "myButton");
           markup.innerHTML = "LOG IN";
-          markup.addEventListener("click", () =>  getCpOauthUrl());
+          markup.addEventListener("click", getCpOauthUrl());
       nav.append(markup);
       // const isLoggedIn = this.isLoggedIn();
       // const currentUrl = new URL(window.location.href);
@@ -196,8 +196,8 @@ export default async function decorate(block) {
       //     markup.innerHTML = "LOG IN";
       //     markup.addEventListener("click", () =>  getCpOauthUrl() );
       //     nav.append(markup);
-      //   }
-      // }
+        }
+       }
       //document.getElementById("myButton").onclick = getCpOauthUrl;
     }
     async function fetchToken(code) {
