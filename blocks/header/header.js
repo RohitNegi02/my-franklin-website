@@ -194,7 +194,7 @@ export default async function decorate(block) {
           const markup = document.createElement("button");
           markup.setAttribute("id", "myButton");
           markup.innerHTML = "LOG IN";
-          markup.addEventListener("click", () =>  getCpOauthUrl() );
+          markup.addEventListener("click",  getCpOauthUrl() );
         //  nav.append(markup);
         }
        }
