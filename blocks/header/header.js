@@ -178,24 +178,24 @@ export default async function decorate(block) {
       return "";
     }
     async function handlePrimeLogIn() {
-       const markup = document.createElement("button");
-          markup.setAttribute("id", "myButton");
-          markup.innerHTML = "LOG IN";
-          markup.addEventListener("click", getCpOauthUrl());
-      nav.append(markup);
-      // const isLoggedIn = this.isLoggedIn();
-      // const currentUrl = new URL(window.location.href);
-      // const code = currentUrl.searchParams.get("code");
-
-      // if (code) {
-      //   await fetchToken(code);
-      // } else {
-      //   if (getCookie() == "") {
-      //     const markup = document.createElement("button");
+      //  const markup = document.createElement("button");
       //     markup.setAttribute("id", "myButton");
       //     markup.innerHTML = "LOG IN";
-      //     markup.addEventListener("click", () =>  getCpOauthUrl() );
-      //     nav.append(markup);
+      //     markup.addEventListener("click", getCpOauthUrl());
+      // nav.append(markup);
+      const isLoggedIn = this.isLoggedIn();
+      const currentUrl = new URL(window.location.href);
+      const code = currentUrl.searchParams.get("code");
+
+      if (code) {
+        await fetchToken(code);
+      } else {
+        if (getCookie() == "") {
+          const markup = document.createElement("button");
+          markup.setAttribute("id", "myButton");
+          markup.innerHTML = "LOG IN";
+          markup.addEventListener("click", () =>  getCpOauthUrl() );
+          nav.append(markup);
         }
        }
       //document.getElementById("myButton").onclick = getCpOauthUrl;
