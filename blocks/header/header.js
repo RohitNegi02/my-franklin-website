@@ -178,21 +178,26 @@ export default async function decorate(block) {
       return "";
     }
     async function handlePrimeLogIn() {
-      // const isLoggedIn = this.isLoggedIn();
-      const currentUrl = new URL(window.location.href);
-      const code = currentUrl.searchParams.get("code");
-
-      if (code) {
-        await fetchToken(code);
-      } else {
-        if (getCookie() == "") {
-          const markup = document.createElement("button");
+       const markup = document.createElement("button");
           markup.setAttribute("id", "myButton");
           markup.innerHTML = "LOG IN";
-          markup.addEventListener("click", () => getCpOauthUrl());
-          nav.append(markup);
-        }
-      }
+          markup.addEventListener("click", () =>  getCpOauthUrl());
+      nav.append(markup);
+      // const isLoggedIn = this.isLoggedIn();
+      // const currentUrl = new URL(window.location.href);
+      // const code = currentUrl.searchParams.get("code");
+
+      // if (code) {
+      //   await fetchToken(code);
+      // } else {
+      //   if (getCookie() == "") {
+      //     const markup = document.createElement("button");
+      //     markup.setAttribute("id", "myButton");
+      //     markup.innerHTML = "LOG IN";
+      //     markup.addEventListener("click", () =>  getCpOauthUrl() );
+      //     nav.append(markup);
+      //   }
+      // }
       //document.getElementById("myButton").onclick = getCpOauthUrl;
     }
     async function fetchToken(code) {
@@ -213,7 +218,7 @@ export default async function decorate(block) {
     }
     function getCpOauthUrl() {
       document.location.href =
-        "https://learningmanager.adobe.com/oauth/o/authorize?account=121816&client_id=62f33554-103c-4fcb-b68c-d35c1d3da6a5&redirect_uri=https://main--my-franklin-website--rohitnegi02.hlx.live&state=cpState&scope=learner:read,learner:write&response_type=CODE&client_identifier=aemsite&logoutAfterAuthorize=true";
+        "https://learningmanager.adobe.com/oauth/o/authorize?account=121816&client_id=62f33554-103c-4fcb-b68c-d35c1d3da6a5&redirect_uri=http://localhost:4502/content/core-components-examples/library/adaptive-form/dateinput.html&state=prime_auth&scope=learner:read,learner:write&response_type=CODE&logoutAfterAuthorize=false";
     }
     // hamburger for mobile
     const hamburger = document.createElement("div");
