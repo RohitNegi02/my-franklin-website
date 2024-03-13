@@ -186,24 +186,25 @@ export default async function decorate(block) {
      // const isLoggedIn = this.isLoggedIn();
       const currentUrl = new URL(window.location.href);
       const code = currentUrl.searchParams.get("code");
+      const course = currentUrl.searchParams.get("course");
 
       if (code) {
-        await fetchToken(code);
+        await fetchToken(code,course);
       } else {
         if (getCookie() == "") {
           const markup = document.createElement("button");
           markup.setAttribute("id", "myButton");
           markup.innerHTML = "LOG IN";
-          markup.addEventListener("click",  getCpOauthUrl() );
+          markup.addEventListener("click",  getCpOauthUrl(course) );
         //  nav.append(markup);
         }else{
           const accessToken=getCookie();
-           getCourse(accessToken);
+           getCourse(accessToken,course);
         }
        }
       //document.getElementById("myButton").onclick = getCpOauthUrl;
     }
-    async function fetchToken(code) {
+    async function fetchToken(code,course) {
       var requestOptions = {
         method: "POST",
         redirect: "follow",
@@ -217,11 +218,11 @@ export default async function decorate(block) {
         .then((result) => {
           document.cookie = "access_token" + "=" + (result.access_token || "");
           console.log(result.access_token);
-          getCourse(result.access_token);
+          getCourse(result.access_token,course);
         })
         .catch((error) => console.log("error", error));
     }
-    function getCourse(access_token){
+    function getCourse(access_token,course){
 const myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 myHeaders.append("Authorization", `Bearer ${access_token}`);
@@ -232,16 +233,16 @@ const requestOptions = {
   redirect: "follow"
 };
 
-fetch("https://learningmanager.adobe.com/primeapi/v2/learningObjects/course:7235210", requestOptions)
+fetch(`https://learningmanager.adobe.com/primeapi/v2/learningObjects/course:${course}`, requestOptions)
   .then((response) => response.json())
   .then((result) => {console.log(result.data.relationships.instances.data[0].id);
       const instId=result.data.relationships.instances.data[0].id;
-       enrollUser(access_token,instId);
+       enrollUser(access_token,instId,course);
                     })
   .catch((error) => console.error(error));
     }
 
-    function enrollUser(access_token,instance){
+    function enrollUser(access_token,instance,course){
       const myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 myHeaders.append("Authorization", `Bearer ${access_token}`);
@@ -252,15 +253,15 @@ const requestOptions = {
   redirect: "follow"
 };
 
-fetch(`https://learningmanager.adobe.com/primeapi/v2/enrollments?loId=course:7235210&loInstanceId=${instance}`, requestOptions)
+fetch(`https://learningmanager.adobe.com/primeapi/v2/enrollments?loId=course:${course}&loInstanceId=${instance}`, requestOptions)
   .then((response) => response.json())
   .then((result) => console.log("User Enrolled"))
   .catch((error) => console.error(error));
     }
-    function getCpOauthUrl() {
+    function getCpOauthUrl(course) {
       console.log("hello");
       document.location.href =
-        "https://learningmanager.adobe.com/oauth/o/authorize?account=121816&client_id=62f33554-103c-4fcb-b68c-d35c1d3da6a5&redirect_uri=https://main--my-franklin-website--rohitnegi02.hlx.live&state=prime_auth&scope=learner:read,learner:write&response_type=CODE&logoutAfterAuthorize=false";
+        `https://learningmanager.adobe.com/oauth/o/authorize?account=121816&client_id=62f33554-103c-4fcb-b68c-d35c1d3da6a5&redirect_uri=https://main--my-franklin-website--rohitnegi02.hlx.live?course=${course}&state=prime_auth&scope=learner:read,learner:write&response_type=CODE&logoutAfterAuthorize=false`;
     }
     // hamburger for mobile
     const hamburger = document.createElement("div");
