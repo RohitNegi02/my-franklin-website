@@ -234,7 +234,10 @@ const requestOptions = {
 
 fetch("https://learningmanager.adobe.com/primeapi/v2/learningObjects/course:7235210", requestOptions)
   .then((response) => response.json())
-  .then((result) => console.log(result.data.relationships.instances.data[0]))
+  .then((result) => console.log(result.data.relationships.instances.data[0].id);
+      const instId=result.data.relationships.instances.data[0].id;
+       enrollUser(course:7235210,instId)
+       )
   .catch((error) => console.error(error));
     }
 
@@ -250,8 +253,8 @@ const requestOptions = {
 };
 
 fetch("https://learningmanager.adobe.com/primeapi/v2/enrollments?loId=course:7235210&loInstanceId=course:7235210_7875877", requestOptions)
-  .then((response) => response.text())
-  .then((result) => console.log(result))
+  .then((response) => response.json())
+  .then((result) => console.log("User Enrolled"))
   .catch((error) => console.error(error));
     }
     function getCpOauthUrl() {
