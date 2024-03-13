@@ -237,7 +237,7 @@ fetch("https://learningmanager.adobe.com/primeapi/v2/learningObjects/course:7235
   .then((result) => {console.log(result.data.relationships.instances.data[0].id));
       const instId=result.data.relationships.instances.data[0].id;
        enrollUser(access_token,instId);
-       )}
+                    })
   .catch((error) => console.error(error));
     }
 
