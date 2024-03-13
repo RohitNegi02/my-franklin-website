@@ -213,8 +213,28 @@ export default async function decorate(block) {
         .then((response) => response.json())
         .then((result) => {
           document.cookie = "access_token" + "=" + (result.access_token || "");
+          getCourse(result.access_token);
         })
         .catch((error) => console.log("error", error));
+    }
+    function getCourse(access_token){
+const myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+myHeaders.append("Authorization", `Bearer ${access_token}`);
+
+const requestOptions = {
+  method: "GET",
+  headers: myHeaders,
+  redirect: "follow"
+};
+
+fetch("https://learningmanager.adobe.com/primeapi/v2/learningObjects/course:7235210", requestOptions)
+  .then((response) => response.json())
+  .then((result) => console.log(result))
+  .catch((error) => console.error(error));
+
+
+      
     }
     function getCpOauthUrl() {
       console.log("hello");
