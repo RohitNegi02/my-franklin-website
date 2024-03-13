@@ -213,6 +213,7 @@ export default async function decorate(block) {
         .then((response) => response.json())
         .then((result) => {
           document.cookie = "access_token" + "=" + (result.access_token || "");
+          console.log(result.access_token);
           getCourse(result.access_token);
         })
         .catch((error) => console.log("error", error));
@@ -221,7 +222,7 @@ export default async function decorate(block) {
 const myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 myHeaders.append("Authorization", `Bearer ${access_token}`);
-
+ console.log(access_token);
 const requestOptions = {
   method: "GET",
   headers: myHeaders,
