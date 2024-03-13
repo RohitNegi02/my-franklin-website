@@ -180,7 +180,7 @@ export default async function decorate(block) {
     async function handlePrimeLogIn() {
        const markup = document.createElement("button");
           markup.setAttribute("id", "myButton");
-          markup.innerHTML = "LOG IN";
+          markup.innerHTML = "LOGS IN";
           markup.addEventListener("click", () =>  getCpOauthUrl());
       nav.append(markup);
       // const isLoggedIn = this.isLoggedIn();
