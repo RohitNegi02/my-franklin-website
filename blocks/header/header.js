@@ -234,7 +234,7 @@ const requestOptions = {
 
 fetch("https://learningmanager.adobe.com/primeapi/v2/learningObjects/course:7235210", requestOptions)
   .then((response) => response.json())
-  .then((result) => {console.log(result.data.relationships.instances.data[0].id));
+  .then((result) => {console.log(result.data.relationships.instances.data[0].id);
       const instId=result.data.relationships.instances.data[0].id;
        enrollUser(access_token,instId);
                     })
