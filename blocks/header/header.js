@@ -196,6 +196,9 @@ export default async function decorate(block) {
           markup.innerHTML = "LOG IN";
           markup.addEventListener("click",  getCpOauthUrl() );
         //  nav.append(markup);
+        }else{
+          const accessToken=getCookie();
+           getCourse(accessToken);
         }
        }
       //document.getElementById("myButton").onclick = getCpOauthUrl;
