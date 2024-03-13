@@ -255,13 +255,21 @@ const requestOptions = {
 
 fetch(`https://learningmanager.adobe.com/primeapi/v2/enrollments?loId=course:${course}&loInstanceId=${instance}`, requestOptions)
   .then((response) => response.json())
-  .then((result) => console.log("User Enrolled"))
+  .then((result) => {console.log("User Enrolled");
+                    playPlayer(access_token,course,instance);
+                    })
   .catch((error) => console.error(error));
     }
     function getCpOauthUrl(course) {
       console.log("hello");
       document.location.href =
         `https://learningmanager.adobe.com/oauth/o/authorize?account=121816&client_id=62f33554-103c-4fcb-b68c-d35c1d3da6a5&redirect_uri=https://main--my-franklin-website--rohitnegi02.hlx.live?course=${course}&state=prime_auth&scope=learner:read,learner:write&response_type=CODE&logoutAfterAuthorize=false`;
+    }
+
+    function playPlayer(access_token,course,instance) {
+      console.log("hello");
+      document.location.href =
+        `https://learningmanager.adobe.com//app/player?&user_id=20986942&account_id=121816&csrf_token=${access_token}&is_staged=false&preview=true&no_reporting=true&is_native=true&course_id=course:${course}&module_id=course:${instance}`;
     }
     // hamburger for mobile
     const hamburger = document.createElement("div");
