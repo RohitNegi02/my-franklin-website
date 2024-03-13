@@ -234,11 +234,25 @@ const requestOptions = {
 
 fetch("https://learningmanager.adobe.com/primeapi/v2/learningObjects/course:7235210", requestOptions)
   .then((response) => response.json())
+  .then((result) => console.log(result.data.relationships.instances.data[0]))
+  .catch((error) => console.error(error));
+    }
+
+    function enrollUser(course,instance){
+      const myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+myHeaders.append("Authorization", "Bearer 989a52f4922a85ac7939a8130d3768de");
+
+const requestOptions = {
+  method: "POST",
+  headers: myHeaders,
+  redirect: "follow"
+};
+
+fetch("https://learningmanager.adobe.com/primeapi/v2/enrollments?loId=course:7235210&loInstanceId=course:7235210_7875877", requestOptions)
+  .then((response) => response.text())
   .then((result) => console.log(result))
   .catch((error) => console.error(error));
-
-
-      
     }
     function getCpOauthUrl() {
       console.log("hello");
