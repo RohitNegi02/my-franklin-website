@@ -236,15 +236,15 @@ fetch("https://learningmanager.adobe.com/primeapi/v2/learningObjects/course:7235
   .then((response) => response.json())
   .then((result) => console.log(result.data.relationships.instances.data[0].id));
       const instId=result.data.relationships.instances.data[0].id;
-       enrollUser(course:7235210,instId);
+       enrollUser(access_token,instId);
        )
   .catch((error) => console.error(error));
     }
 
-    function enrollUser(course,instance){
+    function enrollUser(access_token,instance){
       const myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
-myHeaders.append("Authorization", "Bearer 989a52f4922a85ac7939a8130d3768de");
+myHeaders.append("Authorization", `Bearer ${access_token}`);
 
 const requestOptions = {
   method: "POST",
@@ -252,7 +252,7 @@ const requestOptions = {
   redirect: "follow"
 };
 
-fetch("https://learningmanager.adobe.com/primeapi/v2/enrollments?loId=course:7235210&loInstanceId=course:7235210_7875877", requestOptions)
+fetch(`https://learningmanager.adobe.com/primeapi/v2/enrollments?loId=course:7235210&loInstanceId=${instance}`, requestOptions)
   .then((response) => response.json())
   .then((result) => console.log("User Enrolled"))
   .catch((error) => console.error(error));
