@@ -187,7 +187,9 @@ export default async function decorate(block) {
       const currentUrl = new URL(window.location.href);
       const code = currentUrl.searchParams.get("code");
       const course = currentUrl.searchParams.get("course");
-
+if(course==null){
+  return;
+}
       if (code) {
         await fetchToken(code,course);
       } else {
