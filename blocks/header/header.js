@@ -265,7 +265,7 @@ fetch(`https://learningmanager.adobe.com/primeapi/v2/enrollments?loId=course:${c
     function getCpOauthUrl(course) {
       console.log("hello");
       document.location.href =
-        `https://learningmanager.adobe.com/oauth/o/authorize?account=121816&client_id=62f33554-103c-4fcb-b68c-d35c1d3da6a5&redirect_uri=https://main--my-franklin-website--rohitnegi02.hlx.live?course=${course}&state=prime_auth&scope=learner:read,learner:write&response_type=CODE&logoutAfterAuthorize=false`;
+        `https://learningmanager.adobe.com/oauth/o/authorize?account=121816&client_id=62f33554-103c-4fcb-b68c-d35c1d3da6a5&redirect_uri=https://main--my-franklin-website--rohitnegi02.hlx.page?course=${course}&state=prime_auth&scope=learner:read,learner:write&response_type=CODE&logoutAfterAuthorize=false`;
     }
 
     function playPlayer(access_token,course,instance) {
