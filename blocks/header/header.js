@@ -277,7 +277,7 @@ fetch(`https://learningmanager.adobe.com/primeapi/v2/enrollments?loId=course:${c
 
             // Set attributes for the iframe
             iframe.src = `https://captivateprime.adobe.com/app/player?lo_id=course:${course}&access_token=${access_token}`; // Replace with the desired URL
-           
+           console.log(`https://captivateprime.adobe.com/app/player?lo_id=course:${course}&access_token=${access_token}`);
            // iframe.allowFullscreen = true;
 
             // Append the iframe to the body or another container element
