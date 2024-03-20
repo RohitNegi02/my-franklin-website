@@ -270,9 +270,9 @@ fetch(`https://learningmanager.adobe.com/primeapi/v2/enrollments?loId=course:${c
 
     function playPlayer(access_token,course,instance) {
       console.log("hello");
-      document.location.href =
+    //  document.location.href =
       //  `https://learningmanager.adobe.com//app/player?&user_id=20986942&account_id=121816&csrf_token=${access_token}&is_staged=false&preview=true&no_reporting=true&is_native=true&course_id=course:${course}&module_id=${instance}`;
-   `https://captivateprime.adobe.com/app/player?lo_id=course:${course}&access_token=${access_token}`
+  // `https://captivateprime.adobe.com/app/player?lo_id=course:${course}&access_token=${access_token}`
   var iframe = document.createElement('iframe');
 
             // Set attributes for the iframe
