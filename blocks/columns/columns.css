@@ -41,3 +41,7 @@
 .hero-column > div h4 {
   color: #616161;
 }
+.columns-2-cols{
+display: flex;
+    gap: 20px;
+    flex-direction: column;}
