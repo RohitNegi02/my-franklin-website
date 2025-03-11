@@ -4,6 +4,7 @@ header .nav-wrapper {
   z-index: 2;
   position: fixed;
   color: black;
+      background-color: white;
 }
 iframe {
     display: block;      
