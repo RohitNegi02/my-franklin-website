@@ -37,7 +37,6 @@
 }
 
 .slider__btn--left {
-  left: 6%;
   transform: translate(50%, -118%);
 }
 
