@@ -17,7 +17,8 @@
   --background-color: #fff;
   --overlay-background-color: #eee;
   --highlight-background-color: #ccc;
-  --text-color: #000;
+  --text-color: #000
+  --color-yellow: #ffea00;
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback;
@@ -177,7 +178,7 @@ button {
   font-weight: 600;
   cursor: pointer;
   color: var(--background-color);
-  background-color: var(--link-color);
+  background-color:  var(--color-yellow);;
   margin: 16px 0;
   white-space: nowrap;
   overflow: hidden;
