@@ -81,7 +81,9 @@ main .form .form-checkbox-wrapper input[type="checkbox"] {
   margin-right: var(--spacing-xxs);
   margin-left: 0;
 }
-
+main .form button {
+  font-size:30px;
+}
 main .form .form-checkbox-wrapper input[type="checkbox"]::after {
   display: block;
   position: absolute;
