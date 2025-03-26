@@ -1,39 +1,75 @@
-/* block specific CSS goes here */
-
-main .hero-container > div {
-  max-width: unset;
-}
-  
-main .hero-container {
-  padding: 0;
-}
-  
-main .hero {
+.banner-content {
+  max-width: 100%;
+  margin: 0 auto;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
   position: relative;
-  padding: 32px;
-  min-height: 300px;
+  color: #000;
+  display: flex;
+  align-items: center;
+  padding: 60px 20px;
 }
 
-main .hero h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: white;
-}
-
-main .hero picture {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  object-fit: cover;
-  box-sizing: border-box;
-}
-
-main .hero img {
-  object-fit: cover;
+.banner-inner {
+  display: flex;
+  justify-content: space-between;
   width: 100%;
-  height: 100%;
+}
+
+.text-container {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.banner-title h1,
+.banner-title h2,
+.banner-title p {
+  color: #000;
+  margin: 5px 0;
+}
+
+.temperature-info {
+ 
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  border-radius: 5px;
+  margin-left: auto;
+   height: 150px; /* Explicitly set the height to reduce the length */
+  overflow: auto;
+}
+
+.temperature-info ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.temperature-info li {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 5px 0;
+  color: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+  .banner-inner {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  
+  .text-container,
+  .temperature-info {
+   /* Move temperature-info div to come first in mobile view */
+    width: 100%;
+    padding-left:10px;
+	padding-right: 0px;
+	
+  }
+  
+  .text-container {
+    width: 100%;
+    padding: 0;
+  }
 }
