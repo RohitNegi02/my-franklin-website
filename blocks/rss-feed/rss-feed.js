@@ -5,7 +5,7 @@ const fetchRSSFeed = async () => {
     const response = await fetch('https://newsdata.io/api/1/news?apikey=pub_74190f1a09ff0aad8b8e1dd35167f33e536f6&q=technology&country=us&language=en');
     if (!response.ok) throw new Error('Failed to fetch RSS feed');
     const data = await response.json();
-    return data.results;
+    return   data.results.slice(0, 8);;
   } catch (error) {
     console.error('Error fetching RSS feed:', error);
     return null;
