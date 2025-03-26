@@ -65,9 +65,9 @@ export default function decorate(block) {
     .then(response => response.json())
     .then(data => {
       const temp = data.main;
-      currentTemp.textContent = `Current Temp: ${((temp.temp - 32) * 5/9).toFixed(2)}°C`;
-      minTemp.textContent = `Min Temp: ${((temp.temp_min - 32) * 5/9).toFixed(2)}°C`;
-      maxTemp.textContent = `Max Temp: ${((temp.temp_max - 32) * 5/9).toFixed(2)}°C`;
+      currentTemp.textContent = `Current Temp: ${temp.temp}°C`;
+      minTemp.textContent = `Min Temp: ${temp.temp_min}°C`;
+      maxTemp.textContent = `Max Temp: ${temp.temp_max}°C`;
     })
     .catch(error => {
       console.error('Error fetching temperature data:', error);
